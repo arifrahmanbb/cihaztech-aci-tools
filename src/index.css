@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* ── Custom global overrides ── */
+:root {
+  --aci-red: #c8102e;
+  --aci-red-dark: #a00d24;
+  --header-height: 72px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Offset anchor targets so the fixed header doesn't cover headings */
+[id] {
+  scroll-margin-top: calc(var(--header-height) + 24px);
+}
+
+/* Product image container – fixed aspect ratio 4:3 */
+.product-img-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* 4:3 */
+  overflow: hidden;
+  background-color: #f3f4f6;
+}
+
+.product-img-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+}
+
+/* ACI red button */
+.btn-aci {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 22px;
+  border-radius: 6px;
+  background-color: var(--aci-red);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  touch-action: manipulation;
+}
+
+.btn-aci:hover {
+  background-color: var(--aci-red-dark);
+}
+
+.btn-aci:focus-visible {
+  outline: 3px solid #fbcfe8;
+  outline-offset: 2px;
+}
