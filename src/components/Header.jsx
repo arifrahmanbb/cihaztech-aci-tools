@@ -38,6 +38,11 @@ export default function Header({ categories }) {
     setMobileOpen(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setMobileOpen(false);
+  };
+
   return (
     <>
       <header
@@ -45,13 +50,12 @@ export default function Header({ categories }) {
         style={{ height: 'var(--header-height)' }}
       >
         <div className="max-w-screen-xl mx-auto h-full flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-          {/* ── Logo + Title ── */}
-          <a
-            href="https://acimotors-bd.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 shrink-0 group"
-            aria-label="ACI Motors – go to official website"
+          {/* ── Logo ── */}
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="flex items-center gap-3 shrink-0 text-left focus:outline-none"
+            aria-label="ACI Motors – scroll to top"
           >
             <img
               src="https://acimotors-bd.com/assets/images/acimotors-logo.svg"
@@ -59,13 +63,10 @@ export default function Header({ categories }) {
               className="h-9 w-auto"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
-            <div className="hidden sm:block leading-tight">
-              <span className="block text-sm font-bold text-gray-900 group-hover:text-[#c8102e] transition-colors">
-                ACI Motors
-              </span>
-              <span className="block text-xs text-gray-500">Product Catalogue</span>
-            </div>
-          </a>
+            <span className="hidden sm:inline text-base font-bold text-gray-900 tracking-tight">
+              ACI Motors
+            </span>
+          </button>
 
           {/* ── Desktop nav ── */}
           <nav

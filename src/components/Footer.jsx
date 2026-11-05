@@ -1,7 +1,5 @@
-import { ExternalLink } from 'lucide-react';
-
 /**
- * Minimal site footer with ACI Motors branding, copyright, and official link.
+ * Minimal site footer with ACI Motors branding and copyright.
  */
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -17,23 +15,14 @@ export default function Footer() {
             className="h-8 w-auto"
             onError={(e) => { e.currentTarget.style.display = 'none'; }}
           />
-          <span className="text-sm text-gray-500">
-            ACI Motors Limited – Product Catalogue
+          <span className="text-sm font-medium text-gray-700">
+            ACI Motors
           </span>
         </div>
 
-        {/* ── Copyright + Link ── */}
-        <div className="flex flex-col sm:flex-row items-center gap-3 text-xs text-gray-400">
+        {/* ── Copyright ── */}
+        <div className="text-xs text-gray-400">
           <span>© {year} ACI Motors Limited. All rights reserved.</span>
-          <a
-            href="https://acimotors-bd.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 text-[#c8102e] hover:underline font-medium"
-          >
-            Visit official website
-            <ExternalLink size={12} aria-hidden="true" />
-          </a>
         </div>
       </div>
     </footer>
