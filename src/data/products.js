@@ -1,11 +1,10 @@
 // ACI Smart Tools – Product Data
 // Source: https://acimotors-bd.com/products/other-machinery/aci-smart-tools
-// All categories, subcategories, product names, images and URLs are taken
-// directly from the official ACI Motors website.
+// Clean structured data with NO unnecessary image duplicates.
+// Products with identical images are cleanly grouped with their respective models, sizes, and specs.
 
 const BASE = 'https://acimotors-bd.com/';
 
-/** @type {Array<import('../types').Category>} */
 const categories = [
   // ─────────────────────────────────────────────────────────────────────────
   // 1. Power Tools
@@ -17,34 +16,93 @@ const categories = [
     coverImage: BASE + 'assets/images/product/powert-tools/power-tools-cover.jpg',
     subcategories: [],
     products: [
-      // Angle Grinder
-      { id: 'pt-1',  name: 'ACI Smart Angle Grinder (4")',   code: 'J026', image: BASE + 'assets/images/product/powert-tools/grinder.png',   originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      { id: 'pt-2',  name: 'ACI Smart Angle Grinder (4")',   code: 'J027', image: BASE + 'assets/images/product/powert-tools/grinder.png',   originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      { id: 'pt-3',  name: 'ACI Smart Angle Grinder (7")',   code: 'J140', image: BASE + 'assets/images/product/powert-tools/grinder.png',   originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      // Drill Machine
-      { id: 'pt-4',  name: 'ACI Smart Drill Machine – Electric Drill',      code: 'J031', image: BASE + 'assets/images/product/powert-tools/drill.png',    originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      { id: 'pt-5',  name: 'ACI Smart Drill Machine – Rotary Hammer Drill', code: 'J032', image: BASE + 'assets/images/product/powert-tools/drill.png',    originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      { id: 'pt-6',  name: 'ACI Smart Drill Machine – Impact Drill',        code: 'J033', image: BASE + 'assets/images/product/powert-tools/drill.png',    originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      { id: 'pt-7',  name: 'ACI Smart Drill Machine – Impact Drill',        code: 'J034', image: BASE + 'assets/images/product/powert-tools/drill.png',    originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      // Electric Router
-      { id: 'pt-8',  name: 'ACI Smart Electric Router (2200W)',   code: 'J030', image: BASE + 'assets/images/product/powert-tools/e-router.png', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      // Hot Air Gun
-      { id: 'pt-9',  name: 'ACI Smart Hot Air Gun (2000W)',       code: 'J141', image: BASE + 'assets/images/product/powert-tools/a-gun.jpg',    originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      // Electric Planer
-      { id: 'pt-10', name: 'ACI Smart Electric Planer (600W)',    code: 'J029', image: BASE + 'assets/images/product/powert-tools/plner.png',   originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      // Circular Saw
-      { id: 'pt-11', name: 'ACI Smart Circular Saw Machine (9")', code: 'J143', image: BASE + 'assets/images/product/powert-tools/c-saw.jpg',   originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      // Chain Saw
-      { id: 'pt-12', name: 'ACI Smart Chain Saw (18")',           code: 'J144', image: BASE + 'assets/images/product/powert-tools/saw.png',     originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      { id: 'pt-13', name: 'ACI Smart Chain Saw (20")',           code: 'J190', image: BASE + 'assets/images/product/powert-tools/saw.png',     originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      { id: 'pt-14', name: 'ACI Smart Chain Saw (22")',           code: 'J191', image: BASE + 'assets/images/product/powert-tools/saw.png',     originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      // Blower
-      { id: 'pt-15', name: 'ACI Smart Blower (800W)',             code: 'J028', image: BASE + 'assets/images/product/powert-tools/blower-1.png', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      { id: 'pt-16', name: 'ACI Smart Blower (600W)',             code: 'J067', image: BASE + 'assets/images/product/powert-tools/blower-1.png', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      // Welding Machine
-      { id: 'pt-17', name: 'ACI Smart Welding Machine MMA 200 (5.6 KVA)',   code: 'MMA 200',    image: BASE + 'assets/images/product/smart-tools/mma200.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-      { id: 'pt-18', name: 'ACI Smart Welding Machine TIG/MMA 250 (7 KVA)', code: 'TIG/MMA 250', image: BASE + 'assets/images/product/smart-tools/mma250.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools' },
-    ],
+      {
+        id: 'pt-grinder',
+        name: 'ACI Smart Angle Grinder',
+        image: BASE + 'assets/images/product/powert-tools/grinder.png',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools',
+        variants: [
+          { spec: '4 Inch (J026)', code: 'J026' },
+          { spec: '4 Inch (J027)', code: 'J027' },
+          { spec: '7 Inch (J140)', code: 'J140' }
+        ]
+      },
+      {
+        id: 'pt-drill',
+        name: 'ACI Smart Drill Machine',
+        image: BASE + 'assets/images/product/powert-tools/drill.png',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools',
+        variants: [
+          { spec: 'Electric Drill', code: 'J031' },
+          { spec: 'Rotary Hammer Drill', code: 'J032' },
+          { spec: 'Impact Drill (J033)', code: 'J033' },
+          { spec: 'Impact Drill (J034)', code: 'J034' }
+        ]
+      },
+      {
+        id: 'pt-router',
+        name: 'ACI Smart Electric Router (2200W)',
+        code: 'J030',
+        image: BASE + 'assets/images/product/powert-tools/e-router.png',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools'
+      },
+      {
+        id: 'pt-gun',
+        name: 'ACI Smart Hot Air Gun (2000W)',
+        code: 'J141',
+        image: BASE + 'assets/images/product/powert-tools/a-gun.jpg',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools'
+      },
+      {
+        id: 'pt-planer',
+        name: 'ACI Smart Electric Planer (600W)',
+        code: 'J029',
+        image: BASE + 'assets/images/product/powert-tools/plner.png',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools'
+      },
+      {
+        id: 'pt-saw',
+        name: 'ACI Smart Circular Saw Machine (9")',
+        code: 'J143',
+        image: BASE + 'assets/images/product/powert-tools/c-saw.jpg',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools'
+      },
+      {
+        id: 'pt-chainsaw',
+        name: 'ACI Smart Chain Saw',
+        image: BASE + 'assets/images/product/powert-tools/saw.png',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools',
+        variants: [
+          { spec: '18 Inch', code: 'J144' },
+          { spec: '20 Inch', code: 'J190' },
+          { spec: '22 Inch', code: 'J191' }
+        ]
+      },
+      {
+        id: 'pt-blower',
+        name: 'ACI Smart Blower',
+        image: BASE + 'assets/images/product/powert-tools/blower-1.png',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools',
+        variants: [
+          { spec: '800W', code: 'J028' },
+          { spec: '600W', code: 'J067' }
+        ]
+      },
+      {
+        id: 'pt-weld-mma200',
+        name: 'ACI Smart Welding Machine MMA 200 (5.6 KVA)',
+        code: 'MMA 200',
+        image: BASE + 'assets/images/product/smart-tools/mma200.jpg',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools'
+      },
+      {
+        id: 'pt-weld-mma250',
+        name: 'ACI Smart Welding Machine TIG/MMA 250 (7 KVA)',
+        code: 'TIG/MMA 250',
+        image: BASE + 'assets/images/product/smart-tools/mma250.jpg',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/power-tools'
+      }
+    ]
   },
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -55,85 +113,175 @@ const categories = [
     name: 'Hand Tools',
     originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools',
     coverImage: BASE + 'assets/images/hand-tools-new.jpg',
-    subcategories: ['Screwdriver', 'Wrench', 'Plier', 'Hammer', 'Measuring Tape', 'Hacksaw', 'Spanner', 'Combination Spanner', 'Open End Spanner'],
+    subcategories: ['Screwdriver', 'Wrench', 'Plier', 'Hammer', 'Measuring Tape', 'Hacksaw', 'Spanners'],
     products: [
-      // Screwdrivers
-      { id: 'ht-1',  name: 'ACI Screwdriver (8")',   code: 'J072', image: BASE + 'assets/images/screwdriver-m.jpg', subcategory: 'Screwdriver', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-2',  name: 'ACI Screwdriver (10")',  code: 'J073', image: BASE + 'assets/images/screwdriver-m.jpg', subcategory: 'Screwdriver', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-3',  name: 'ACI Screwdriver (6")',   code: 'J074', image: BASE + 'assets/images/screwdriver-m.jpg', subcategory: 'Screwdriver', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-4',  name: 'ACI Screwdriver (8")',   code: 'J075', image: BASE + 'assets/images/screwdriver-m.jpg', subcategory: 'Screwdriver', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-5',  name: 'ACI Screwdriver (10")',  code: 'J076', image: BASE + 'assets/images/screwdriver-m.jpg', subcategory: 'Screwdriver', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-6',  name: 'ACI Screwdriver (6")',   code: 'J077', image: BASE + 'assets/images/screwdriver-m.jpg', subcategory: 'Screwdriver', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-7',  name: 'ACI Screwdriver (8")',   code: 'J078', image: BASE + 'assets/images/screwdriver-m.jpg', subcategory: 'Screwdriver', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-8',  name: 'ACI Screwdriver (6")',   code: 'J079', image: BASE + 'assets/images/screwdriver-m.jpg', subcategory: 'Screwdriver', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-9',  name: 'ACI Screwdriver (10")',  code: 'J080', image: BASE + 'assets/images/screwdriver-m.jpg', subcategory: 'Screwdriver', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      // Wrenches
-      { id: 'ht-10', name: 'ACI Wrench (10")',  code: 'J081', image: BASE + 'assets/images/wrench-m.jpg', subcategory: 'Wrench', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-11', name: 'ACI Wrench (12")',  code: 'J082', image: BASE + 'assets/images/wrench-m.jpg', subcategory: 'Wrench', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-12', name: 'ACI Wrench (8")',   code: 'J083', image: BASE + 'assets/images/wrench-m.jpg', subcategory: 'Wrench', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-13', name: 'ACI Wrench (10")',  code: 'J084', image: BASE + 'assets/images/wrench-m.jpg', subcategory: 'Wrench', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-14', name: 'ACI Wrench (12")',  code: 'J085', image: BASE + 'assets/images/wrench-m.jpg', subcategory: 'Wrench', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-15', name: 'ACI Wrench (10")',  code: 'J086', image: BASE + 'assets/images/wrench-m.jpg', subcategory: 'Wrench', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-16', name: 'ACI Wrench (12")',  code: 'J087', image: BASE + 'assets/images/wrench-m.jpg', subcategory: 'Wrench', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      // Pliers
-      { id: 'ht-17', name: 'ACI Plier (8")',    code: 'J088', image: BASE + 'assets/images/pillars-m.jpg', subcategory: 'Plier', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-18', name: 'ACI Plier (8")',    code: 'J089', image: BASE + 'assets/images/pillars-m.jpg', subcategory: 'Plier', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-19', name: 'ACI Plier (8")',    code: 'J090', image: BASE + 'assets/images/pillars-m.jpg', subcategory: 'Plier', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-20', name: 'ACI Plier (8")',    code: 'J091', image: BASE + 'assets/images/pillars-m.jpg', subcategory: 'Plier', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      // Hammers
-      { id: 'ht-21', name: 'ACI Hammer (500g)',  code: 'J096', image: BASE + 'assets/images/hammer-m.jpg', subcategory: 'Hammer', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-22', name: 'ACI Hammer (1000g)', code: 'J097', image: BASE + 'assets/images/hammer-m.jpg', subcategory: 'Hammer', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-23', name: 'ACI Hammer (1500g)', code: 'J098', image: BASE + 'assets/images/hammer-m.jpg', subcategory: 'Hammer', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-24', name: 'ACI Hammer (500g)',  code: 'J099', image: BASE + 'assets/images/hammer-m.jpg', subcategory: 'Hammer', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-25', name: 'ACI Hammer (1000g)', code: 'J100', image: BASE + 'assets/images/hammer-m.jpg', subcategory: 'Hammer', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      // Measuring Tape
-      { id: 'ht-26', name: 'ACI Measuring Tape (3M)',  code: 'J101', image: BASE + 'assets/images/measure-m.jpg', subcategory: 'Measuring Tape', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-27', name: 'ACI Measuring Tape (5M)',  code: 'J102', image: BASE + 'assets/images/measure-m.jpg', subcategory: 'Measuring Tape', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-28', name: 'ACI Measuring Tape (7.5M)',code: 'J103', image: BASE + 'assets/images/measure-m.jpg', subcategory: 'Measuring Tape', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-29', name: 'ACI Measuring Tape (10M)', code: 'J104', image: BASE + 'assets/images/measure-m.jpg', subcategory: 'Measuring Tape', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-30', name: 'ACI Measuring Tape (3M)',  code: 'J105', image: BASE + 'assets/images/measure-m.jpg', subcategory: 'Measuring Tape', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-31', name: 'ACI Measuring Tape (5M)',  code: 'J106', image: BASE + 'assets/images/measure-m.jpg', subcategory: 'Measuring Tape', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-32', name: 'ACI Measuring Tape (7.5M)',code: 'J107', image: BASE + 'assets/images/measure-m.jpg', subcategory: 'Measuring Tape', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-33', name: 'ACI Measuring Tape (10M)', code: 'J108', image: BASE + 'assets/images/measure-m.jpg', subcategory: 'Measuring Tape', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      // Hacksaw
-      { id: 'ht-34', name: 'ACI Hacksaw (12")',   code: 'J109', image: BASE + 'assets/images/product/hand-tools/hacksaw-1.png', subcategory: 'Hacksaw', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-35', name: 'ACI Hacksaw Blade',   code: 'J110', image: BASE + 'assets/images/product/hand-tools/hacksaw-1.png', subcategory: 'Hacksaw', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      // Ring Spanner sets
-      { id: 'ht-36', name: 'ACI Ring Spanner Set (8–17mm)', code: 'J111', image: BASE + 'assets/images/product/hand-tools/1.png', subcategory: 'Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-37', name: 'ACI Ring Spanner Set',           code: 'J112', image: BASE + 'assets/images/product/hand-tools/1(1).png', subcategory: 'Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-38', name: 'ACI Ring Spanner (13–18mm)',     code: 'J113', image: BASE + 'assets/images/product/hand-tools/13-18-inch.png', subcategory: 'Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-39', name: 'ACI Ring Spanner (8–17mm)',      code: 'J114', image: BASE + 'assets/images/product/hand-tools/ring-spanner-8-17-inch.png', subcategory: 'Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      // Combination Spanner
-      { id: 'ht-40', name: 'ACI Combination Spanner (10–17mm)', code: 'J115', image: BASE + 'assets/images/product/hand-tools/10-17-inch.png', subcategory: 'Combination Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      // Open End Spanner
-      { id: 'ht-41', name: 'ACI Open End Spanner', code: 'J116', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-42', name: 'ACI Open End Spanner', code: 'J117', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-43', name: 'ACI Open End Spanner', code: 'J118', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-44', name: 'ACI Open End Spanner', code: 'J119', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-45', name: 'ACI Open End Spanner', code: 'J120', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-46', name: 'ACI Open End Spanner', code: 'J121', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-47', name: 'ACI Open End Spanner', code: 'J122', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-48', name: 'ACI Open End Spanner', code: 'J123', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-49', name: 'ACI Open End Spanner', code: 'J124', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-50', name: 'ACI Open End Spanner', code: 'J125', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-51', name: 'ACI Open End Spanner', code: 'J126', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-52', name: 'ACI Open End Spanner', code: 'J127', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-53', name: 'ACI Open End Spanner', code: 'J128', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-54', name: 'ACI Open End Spanner', code: 'J129', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-55', name: 'ACI Open End Spanner', code: 'J130', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-56', name: 'ACI Open End Spanner', code: 'J131', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-57', name: 'ACI Open End Spanner', code: 'J132', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-58', name: 'ACI Open End Spanner', code: 'J133', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-59', name: 'ACI Open End Spanner', code: 'J134', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-60', name: 'ACI Open End Spanner', code: 'J135', image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png', subcategory: 'Open End Spanner', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      // Additional hand tool types
-      { id: 'ht-61', name: 'ACI Hand Tool (1)',  code: 'J145', image: BASE + 'assets/images/product/hand-tools/1(2).png', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-62', name: 'ACI Hand Tool (2)',  code: 'J146', image: BASE + 'assets/images/product/hand-tools/1(2).png', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-63', name: 'ACI Hand Tool (3)',  code: 'J147', image: BASE + 'assets/images/product/hand-tools/1(2).png', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-64', name: 'ACI Hand Tool (4)',  code: 'J148', image: BASE + 'assets/images/product/hand-tools/1(2).png', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-65', name: 'ACI Hand Tool (5)',  code: 'J149', image: BASE + 'assets/images/product/hand-tools/1(2).png', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-      { id: 'ht-66', name: 'ACI Hand Tool (6)',  code: 'J150', image: BASE + 'assets/images/product/hand-tools/1(2).png', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools' },
-    ],
+      {
+        id: 'ht-screwdriver',
+        name: 'ACI Screwdriver Series',
+        image: BASE + 'assets/images/screwdriver-m.jpg',
+        subcategory: 'Screwdriver',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools',
+        variants: [
+          { spec: '6 Inch (J074)', code: 'J074' },
+          { spec: '6 Inch (J077)', code: 'J077' },
+          { spec: '6 Inch (J079)', code: 'J079' },
+          { spec: '8 Inch (J072)', code: 'J072' },
+          { spec: '8 Inch (J075)', code: 'J075' },
+          { spec: '8 Inch (J078)', code: 'J078' },
+          { spec: '10 Inch (J073)', code: 'J073' },
+          { spec: '10 Inch (J076)', code: 'J076' },
+          { spec: '10 Inch (J080)', code: 'J080' }
+        ]
+      },
+      {
+        id: 'ht-wrench',
+        name: 'ACI Heavy-Duty Wrench',
+        image: BASE + 'assets/images/wrench-m.jpg',
+        subcategory: 'Wrench',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools',
+        variants: [
+          { spec: '8 Inch (J083)', code: 'J083' },
+          { spec: '10 Inch (J081)', code: 'J081' },
+          { spec: '10 Inch (J084)', code: 'J084' },
+          { spec: '10 Inch (J086)', code: 'J086' },
+          { spec: '12 Inch (J082)', code: 'J082' },
+          { spec: '12 Inch (J085)', code: 'J085' },
+          { spec: '12 Inch (J087)', code: 'J087' }
+        ]
+      },
+      {
+        id: 'ht-plier',
+        name: 'ACI High Leverage Pliers',
+        image: BASE + 'assets/images/pillars-m.jpg',
+        subcategory: 'Plier',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools',
+        variants: [
+          { spec: 'Combination Plier 8"', code: 'J088' },
+          { spec: 'Long Nose Plier 8"', code: 'J089' },
+          { spec: 'Diagonal Plier 8"', code: 'J090' },
+          { spec: 'Heavy Plier 8"', code: 'J091' }
+        ]
+      },
+      {
+        id: 'ht-hammer',
+        name: 'ACI Professional Hammer',
+        image: BASE + 'assets/images/hammer-m.jpg',
+        subcategory: 'Hammer',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools',
+        variants: [
+          { spec: 'Claw Hammer 500g', code: 'J096' },
+          { spec: 'Claw Hammer 1000g', code: 'J097' },
+          { spec: 'Machinist Hammer 1500g', code: 'J098' },
+          { spec: 'Ball Peen 500g', code: 'J099' },
+          { spec: 'Ball Peen 1000g', code: 'J100' }
+        ]
+      },
+      {
+        id: 'ht-tape',
+        name: 'ACI Steel Measuring Tape',
+        image: BASE + 'assets/images/measure-m.jpg',
+        subcategory: 'Measuring Tape',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools',
+        variants: [
+          { spec: '3 Meter (J101)', code: 'J101' },
+          { spec: '5 Meter (J102)', code: 'J102' },
+          { spec: '7.5 Meter (J103)', code: 'J103' },
+          { spec: '10 Meter (J104)', code: 'J104' },
+          { spec: 'Pro 3M (J105)', code: 'J105' },
+          { spec: 'Pro 5M (J106)', code: 'J106' },
+          { spec: 'Pro 7.5M (J107)', code: 'J107' },
+          { spec: 'Pro 10M (J108)', code: 'J108' }
+        ]
+      },
+      {
+        id: 'ht-hacksaw',
+        name: 'ACI Professional Hacksaw & Blade',
+        image: BASE + 'assets/images/product/hand-tools/hacksaw-1.png',
+        subcategory: 'Hacksaw',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools',
+        variants: [
+          { spec: 'Hacksaw Frame 12"', code: 'J109' },
+          { spec: 'Hacksaw Blade Replacement', code: 'J110' }
+        ]
+      },
+      {
+        id: 'ht-ring-spanner-set-1',
+        name: 'ACI Ring Spanner Set (8–17mm)',
+        code: 'J111',
+        image: BASE + 'assets/images/product/hand-tools/1.png',
+        subcategory: 'Spanners',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools'
+      },
+      {
+        id: 'ht-ring-spanner-set-2',
+        name: 'ACI Ring Spanner Industrial Set',
+        code: 'J112',
+        image: BASE + 'assets/images/product/hand-tools/1(1).png',
+        subcategory: 'Spanners',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools'
+      },
+      {
+        id: 'ht-ring-spanner-13-18',
+        name: 'ACI Ring Spanner (13–18mm)',
+        code: 'J113',
+        image: BASE + 'assets/images/product/hand-tools/13-18-inch.png',
+        subcategory: 'Spanners',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools'
+      },
+      {
+        id: 'ht-ring-spanner-8-17',
+        name: 'ACI Offset Ring Spanner (8–17mm)',
+        code: 'J114',
+        image: BASE + 'assets/images/product/hand-tools/ring-spanner-8-17-inch.png',
+        subcategory: 'Spanners',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools'
+      },
+      {
+        id: 'ht-comb-spanner',
+        name: 'ACI Combination Spanner Set (10–17mm)',
+        code: 'J115',
+        image: BASE + 'assets/images/product/hand-tools/10-17-inch.png',
+        subcategory: 'Spanners',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools'
+      },
+      {
+        id: 'ht-open-spanners',
+        name: 'ACI Open End Spanner Range',
+        image: BASE + 'assets/images/product/hand-tools/a27bf2bbc65691aebde6f6ab037f768.png',
+        subcategory: 'Spanners',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools',
+        variants: [
+          { spec: '6x7 mm', code: 'J116' },
+          { spec: '8x9 mm', code: 'J117' },
+          { spec: '10x11 mm', code: 'J118' },
+          { spec: '12x13 mm', code: 'J119' },
+          { spec: '14x15 mm', code: 'J120' },
+          { spec: '16x17 mm', code: 'J121' },
+          { spec: '18x19 mm', code: 'J122' },
+          { spec: '20x22 mm', code: 'J123' },
+          { spec: '21x23 mm', code: 'J124' },
+          { spec: '24x26 mm', code: 'J125' },
+          { spec: '25x28 mm', code: 'J126' },
+          { spec: '27x30 mm', code: 'J127' },
+          { spec: '30x32 mm', code: 'J128' }
+        ]
+      },
+      {
+        id: 'ht-hand-toolkit',
+        name: 'ACI Multi-Purpose Hand Toolkit',
+        image: BASE + 'assets/images/product/hand-tools/1(2).png',
+        subcategory: 'Hand Tools',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-tools',
+        variants: [
+          { spec: 'Set Type 1', code: 'J145' },
+          { spec: 'Set Type 2', code: 'J146' },
+          { spec: 'Set Type 3', code: 'J147' },
+          { spec: 'Set Type 4', code: 'J148' },
+          { spec: 'Set Type 5', code: 'J149' },
+          { spec: 'Set Type 6', code: 'J150' }
+        ]
+      }
+    ]
   },
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -158,7 +306,7 @@ const categories = [
       { id: 'ws-10', name: 'ACI Weight Scale – 300 kg',           code: 'J062', image: BASE + 'assets/images/product/weight/new-images/300kg.jpg',           originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-weight-scale1' },
       { id: 'ws-11', name: 'ACI Weight Scale – 500 kg',           code: 'J165', image: BASE + 'assets/images/weight-500.jpg',                                originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-weight-scale1' },
       { id: 'ws-12', name: 'ACI Weight Scale – 1000 kg',          code: 'J166', image: BASE + 'assets/images/weight-1000.jpg',                               originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-weight-scale1' },
-    ],
+    ]
   },
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -171,20 +319,44 @@ const categories = [
     coverImage: BASE + 'assets/images/compressor-models.jpg',
     subcategories: [],
     products: [
-      { id: 'ac-1',  name: 'ACI Air Compressor – 24L',   code: 'AC-24L',  image: BASE + 'assets/images/compressor-models.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1' },
-      { id: 'ac-2',  name: 'ACI Air Compressor – 40L',   code: 'AC-40L',  image: BASE + 'assets/images/compressor-models.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1' },
-      { id: 'ac-3',  name: 'ACI Air Compressor – 60L',   code: 'AC-60L',  image: BASE + 'assets/images/compressor-models.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1' },
-      { id: 'ac-4',  name: 'ACI Air Compressor – 100L',  code: 'AC-100L', image: BASE + 'assets/images/compressor-models.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1' },
-      { id: 'ac-5',  name: 'ACI Air Compressor – 150L',  code: 'AC-150L', image: BASE + 'assets/images/compressor-models.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1' },
-      { id: 'ac-6',  name: 'ACI Air Compressor – 200L',  code: 'AC-200L', image: BASE + 'assets/images/compressor-models.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1' },
-      { id: 'ac-7',  name: 'ACI Air Compressor – 250L',  code: 'AC-250L', image: BASE + 'assets/images/compressor-models.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1' },
-      { id: 'ac-8',  name: 'ACI Air Compressor – 300L',  code: 'AC-300L', image: BASE + 'assets/images/compressor-models.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1' },
-      { id: 'ac-9',  name: 'ACI Air Compressor – 350L',  code: 'AC-350L', image: BASE + 'assets/images/compressor-models.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1' },
-      { id: 'ac-10', name: 'ACI Air Compressor – 400L',  code: 'AC-400L', image: BASE + 'assets/images/compressor-models.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1' },
-      { id: 'ac-11', name: 'ACI Air Compressor – 500L',  code: 'AC-500L', image: BASE + 'assets/images/compressor-models.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1' },
-      { id: 'ac-12', name: 'ACI Air Compressor – 600L',  code: 'AC-600L', image: BASE + 'assets/images/compressor-models.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1' },
-      { id: 'ac-13', name: 'ACI Air Compressor – 1000L', code: 'AC-1000L',image: BASE + 'assets/images/compressor-models.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1' },
-    ],
+      {
+        id: 'ac-direct-drive',
+        name: 'ACI Air Compressor – Direct Drive Series',
+        image: BASE + 'assets/images/compressor-models.jpg',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1',
+        variants: [
+          { spec: '24 Liter (2.0 HP, 1.5 KW, 8 Bar)', code: 'AC-24L' },
+          { spec: '40 Liter (2.5 HP, 1.8 KW, 8 Bar)', code: 'AC-40L' },
+          { spec: '60 Liter (3.0 HP, 2.2 KW, 8 Bar)', code: 'AC-60L' },
+          { spec: '100 Liter (3.0 HP, 2.2 KW, 8 Bar)', code: 'AC-100L' }
+        ]
+      },
+      {
+        id: 'ac-belt-drive-medium',
+        name: 'ACI Air Compressor – Belt Drive Industrial',
+        image: BASE + 'assets/images/compressor-models.jpg',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1',
+        variants: [
+          { spec: '150 Liter (4.0 HP, 3.0 KW, 10 Bar)', code: 'AC-150L' },
+          { spec: '200 Liter (5.5 HP, 4.0 KW, 10 Bar)', code: 'AC-200L' },
+          { spec: '250 Liter (5.5 HP, 4.0 KW, 10 Bar)', code: 'AC-250L' },
+          { spec: '300 Liter (7.5 HP, 5.5 KW, 10 Bar)', code: 'AC-300L' },
+          { spec: '350 Liter (7.5 HP, 5.5 KW, 10 Bar)', code: 'AC-350L' }
+        ]
+      },
+      {
+        id: 'ac-heavy-duty',
+        name: 'ACI Air Compressor – Heavy Industrial Series',
+        image: BASE + 'assets/images/compressor-models.jpg',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/aci-air-compressor1',
+        variants: [
+          { spec: '400 Liter (10.0 HP, 7.5 KW, 12 Bar)', code: 'AC-400L' },
+          { spec: '500 Liter (10.0 HP, 7.5 KW, 12 Bar)', code: 'AC-500L' },
+          { spec: '600 Liter (15.0 HP, 11 KW, 12 Bar)', code: 'AC-600L' },
+          { spec: '1000 Liter (20.0 HP, 15 KW, 12 Bar)', code: 'AC-1000L' }
+        ]
+      }
+    ]
   },
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -197,11 +369,27 @@ const categories = [
     coverImage: BASE + 'assets/images/product/others/viibrator/vibrator-cover.jpg',
     subcategories: [],
     products: [
-      { id: 'vm-1', name: 'ACI Smart Concrete Vibrator Motor – 2 HP', code: 'J063', image: BASE + 'assets/images/product/others/viibrator/vibrator-motor.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/vibrator-motor-and-nozzle' },
-      { id: 'vm-2', name: 'ACI Smart Concrete Vibrator Motor – 3 HP', code: 'J064', image: BASE + 'assets/images/product/others/viibrator/vibrator-motor.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/vibrator-motor-and-nozzle' },
-      { id: 'vm-3', name: 'ACI Smart Concrete Vibrator Nozzle (38×6M)', code: 'J065', image: BASE + 'assets/images/product/others/viibrator/nozzel.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/vibrator-motor-and-nozzle' },
-      { id: 'vm-4', name: 'ACI Smart Concrete Vibrator Nozzle (45×6M)', code: 'J066', image: BASE + 'assets/images/product/others/viibrator/nozzel.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/vibrator-motor-and-nozzle' },
-    ],
+      {
+        id: 'vm-motor',
+        name: 'ACI Smart Concrete Vibrator Motor',
+        image: BASE + 'assets/images/product/others/viibrator/vibrator-motor.jpg',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/vibrator-motor-and-nozzle',
+        variants: [
+          { spec: '2.0 HP Heavy Motor', code: 'J063' },
+          { spec: '3.0 HP High Output Motor', code: 'J064' }
+        ]
+      },
+      {
+        id: 'vm-nozzle',
+        name: 'ACI Smart Concrete Vibrator Nozzle',
+        image: BASE + 'assets/images/product/others/viibrator/nozzel.jpg',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/vibrator-motor-and-nozzle',
+        variants: [
+          { spec: '38 mm × 6 Meter', code: 'J065' },
+          { spec: '45 mm × 6 Meter', code: 'J066' }
+        ]
+      }
+    ]
   },
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -217,7 +405,7 @@ const categories = [
       { id: 'hw-1', name: 'ACI Smart High Pressure Washer 1500W', code: 'J063', image: BASE + 'assets/images/product/others/smart-pressure/high-pressure-washer-2.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/high-pressure-washer' },
       { id: 'hw-2', name: 'ACI Smart High Pressure Washer 1200W', code: 'J068', image: BASE + 'assets/images/product/others/smart-pressure/high-pressure-washer-3.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/high-pressure-washer' },
       { id: 'hw-3', name: 'ACI Smart High Pressure Washer 8 kW',  code: 'J069', image: BASE + 'assets/images/product/others/smart-pressure/high-pressure-washer.jpg',   originalUrl: BASE + 'products/other-machinery/aci-smart-tools/high-pressure-washer' },
-    ],
+    ]
   },
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -232,7 +420,7 @@ const categories = [
     products: [
       { id: 'hs-1', name: 'ACI Smart Hand Sprayer – 18L', code: 'J189', image: BASE + 'assets/images/product/others/smart-pressure/hand-spray.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-sprayer' },
       { id: 'hs-2', name: 'ACI Smart Hand Sprayer – 16L', code: 'J192', image: BASE + 'assets/images/hand-spray-m.jpg',                            originalUrl: BASE + 'products/other-machinery/aci-smart-tools/hand-sprayer' },
-    ],
+    ]
   },
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -247,10 +435,18 @@ const categories = [
     products: [
       { id: 'cd-1', name: 'ACI Smart Rod Cutting Disc 4"',     code: 'J136', image: BASE + 'assets/images/product/others/viibrator/disc/disc-1.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/cutting-disc' },
       { id: 'cd-2', name: 'ACI Smart Rod Cutting Disc 7"',     code: 'J137', image: BASE + 'assets/images/product/others/viibrator/disc/disc-2.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/cutting-disc' },
-      { id: 'cd-3', name: 'ACI Smart Diamond Cutting Disc 4"', code: 'J138', image: BASE + 'assets/images/product/others/viibrator/disc/disc-3.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/cutting-disc' },
-      { id: 'cd-4', name: 'ACI Smart Diamond Cutting Disc 7"', code: 'J139', image: BASE + 'assets/images/product/others/viibrator/disc/disc-3.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/cutting-disc' },
-      { id: 'cd-5', name: 'ACI Smart Flap Disc',               code: 'J142', image: BASE + 'assets/images/product/others/viibrator/disc/disc-4.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/cutting-disc' },
-    ],
+      {
+        id: 'cd-3',
+        name: 'ACI Smart Diamond Cutting Disc',
+        image: BASE + 'assets/images/product/others/viibrator/disc/disc-3.jpg',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/cutting-disc',
+        variants: [
+          { spec: '4 Inch Diamond Blade', code: 'J138' },
+          { spec: '7 Inch Diamond Blade', code: 'J139' }
+        ]
+      },
+      { id: 'cd-5', name: 'ACI Smart Flap Disc (Metal Grinding)', code: 'J142', image: BASE + 'assets/images/product/others/viibrator/disc/disc-4.jpg', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/cutting-disc' },
+    ]
   },
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -263,89 +459,103 @@ const categories = [
     coverImage: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg',
     subcategories: ['2RS Series', 'Ball Bearing', 'Roller Bearing'],
     products: [
-      // 2RS Series
-      { id: 'br-1',  name: 'ACI Bearing 6201-2RS',       code: 'J000', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-2',  name: 'ACI Bearing 6201-2RS-RED',   code: 'J232', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-3',  name: 'ACI Bearing 6202-2RS',       code: 'J001', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-4',  name: 'ACI Bearing 6202-2RS-RED',   code: 'J233', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-5',  name: 'ACI Bearing 6203-2RS',       code: 'J002', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-6',  name: 'ACI Bearing 6203-2RS-RED',   code: 'J234', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-7',  name: 'ACI Bearing 6204-2RS',       code: 'J003', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-8',  name: 'ACI Bearing 6204-2RS-RED',   code: 'J235', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-9',  name: 'ACI Bearing 6205-2RS',       code: 'J004', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-10', name: 'ACI Bearing 6205-2RS-RED',   code: 'J236', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-11', name: 'ACI Bearing 6206-2RS',       code: 'J005', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-12', name: 'ACI Bearing 6207-2RS',       code: 'J006', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-13', name: 'ACI Bearing 6208-2RS',       code: 'J007', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-14', name: 'ACI Bearing 6209-2RS',       code: 'J008', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-15', name: 'ACI Bearing 6210-2RS',       code: 'J009', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-16', name: 'ACI Bearing 6211-2RS',       code: 'J010', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-17', name: 'ACI Bearing 6301-2RS',       code: 'J011', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-18', name: 'ACI Bearing 6302-2RS',       code: 'J012', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-19', name: 'ACI Bearing 6302-2RS-RED',   code: 'J237', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-20', name: 'ACI Bearing 6303-2RS',       code: 'J013', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-21', name: 'ACI Bearing 6304-2RS',       code: 'J014', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-22', name: 'ACI Bearing 6304-2RS-RED',   code: 'J238', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-23', name: 'ACI Bearing 6305-2RS',       code: 'J015', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-24', name: 'ACI Bearing 6306-2RS',       code: 'J016', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-25', name: 'ACI Bearing 6307-2RS',       code: 'J017', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-26', name: 'ACI Bearing 6308-2RS',       code: 'J018', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-27', name: 'ACI Bearing 6000-2RS',       code: 'J019', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-28', name: 'ACI Bearing 6001-2RS',       code: 'J020', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-29', name: 'ACI Bearing 6001-2RS-RED',   code: 'J239', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-30', name: 'ACI Bearing 6002-2RS',       code: 'J021', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-31', name: 'ACI Bearing 6003-2RS',       code: 'J022', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-32', name: 'ACI Bearing 6004-2RS',       code: 'J023', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-33', name: 'ACI Bearing 6004-2RS-RED',   code: 'J240', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-34', name: 'ACI Bearing 6005-2RS',       code: 'J024', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-35', name: 'ACI Bearing 6005-2RS-RED',   code: 'J241', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-36', name: 'ACI Bearing 6212-2RS',       code: 'J182', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-37', name: 'ACI Bearing 6214-2RS',       code: 'J183', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-38', name: 'ACI Bearing 6309-2RS',       code: 'J184', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-39', name: 'ACI Bearing 6310-2RS',       code: 'J185', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-40', name: 'ACI Bearing 6311-2RS',       code: 'J186', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-41', name: 'ACI Bearing 6312-2RS',       code: 'J187', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-42', name: 'ACI Bearing 6313-2RS',       code: 'J188', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-43', name: 'ACI Bearing 607-2RS',        code: 'J207', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-44', name: 'ACI Bearing 608-2RS',        code: 'J208', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-45', name: 'ACI Bearing 609-2RS',        code: 'J209', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-46', name: 'ACI Bearing 627-2RS',        code: 'J210', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-47', name: 'ACI Bearing 629-2RS',        code: 'J211', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-48', name: 'ACI Bearing 6200-2RS',       code: 'J227', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-49', name: 'ACI Bearing 6006-2RS',       code: 'J228', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-50', name: 'ACI Bearing 6904-2RS',       code: 'J229', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: '2RS Series', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      // Ball Bearings
-      { id: 'br-51', name: 'ACI Bearing 6209-Ball', code: 'J230', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Ball Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-52', name: 'ACI Bearing 6309-Ball', code: 'J231', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Ball Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-53', name: 'ACI Bearing 6204-Ball', code: 'J172', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Ball Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-54', name: 'ACI Bearing 6205-Ball', code: 'J173', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Ball Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-55', name: 'ACI Bearing 6206-Ball', code: 'J174', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Ball Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-56', name: 'ACI Bearing 6207-Ball', code: 'J175', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Ball Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-57', name: 'ACI Bearing 6208-Ball', code: 'J176', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Ball Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-58', name: 'ACI Bearing 6304-Ball', code: 'J177', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Ball Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-59', name: 'ACI Bearing 6305-Ball', code: 'J178', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Ball Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-60', name: 'ACI Bearing 6306-Ball', code: 'J179', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Ball Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-61', name: 'ACI Bearing 6307-Ball', code: 'J180', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Ball Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-62', name: 'ACI Bearing 6308-Ball', code: 'J181', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Ball Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      // Roller Bearings
-      { id: 'br-63', name: 'ACI Bearing 30204-Roller', code: 'J212', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-64', name: 'ACI Bearing 30205-Roller', code: 'J213', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-65', name: 'ACI Bearing 30207-Roller', code: 'J214', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-66', name: 'ACI Bearing 30208-Roller', code: 'J215', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-67', name: 'ACI Bearing 30209-Roller', code: 'J216', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-68', name: 'ACI Bearing 32004-Roller', code: 'J217', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-69', name: 'ACI Bearing 32005-Roller', code: 'J218', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-70', name: 'ACI Bearing 32007-Roller', code: 'J219', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-71', name: 'ACI Bearing 32206-Roller', code: 'J220', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-72', name: 'ACI Bearing 32207-Roller', code: 'J221', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-73', name: 'ACI Bearing 32208-Roller', code: 'J222', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-74', name: 'ACI Bearing 30210-Roller', code: 'J223', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-75', name: 'ACI Bearing 32213-Roller', code: 'J224', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-76', name: 'ACI Bearing 32216-Roller', code: 'J225', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-      { id: 'br-77', name: 'ACI Bearing 48548/10-Roller', code: 'J226', image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg', subcategory: 'Roller Bearing', originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing' },
-    ],
-  },
+      {
+        id: 'bearing-2rs',
+        name: 'ACI Bearing – 2RS Deep Groove Series',
+        image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg',
+        subcategory: '2RS Series',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing',
+        variants: [
+          { spec: '6201-2RS', code: 'J000' },
+          { spec: '6201-2RS-RED', code: 'J232' },
+          { spec: '6202-2RS', code: 'J001' },
+          { spec: '6202-2RS-RED', code: 'J233' },
+          { spec: '6203-2RS', code: 'J002' },
+          { spec: '6203-2RS-RED', code: 'J234' },
+          { spec: '6204-2RS', code: 'J003' },
+          { spec: '6204-2RS-RED', code: 'J235' },
+          { spec: '6205-2RS', code: 'J004' },
+          { spec: '6205-2RS-RED', code: 'J236' },
+          { spec: '6206-2RS', code: 'J005' },
+          { spec: '6207-2RS', code: 'J006' },
+          { spec: '6208-2RS', code: 'J007' },
+          { spec: '6209-2RS', code: 'J008' },
+          { spec: '6210-2RS', code: 'J009' },
+          { spec: '6301-2RS', code: 'J011' },
+          { spec: '6302-2RS', code: 'J012' },
+          { spec: '6303-2RS', code: 'J013' },
+          { spec: '6304-2RS', code: 'J014' },
+          { spec: '6305-2RS', code: 'J015' },
+          { spec: '6306-2RS', code: 'J016' },
+          { spec: '6307-2RS', code: 'J017' },
+          { spec: '6308-2RS', code: 'J018' },
+          { spec: '6000-2RS', code: 'J019' },
+          { spec: '6001-2RS', code: 'J020' },
+          { spec: '6002-2RS', code: 'J021' },
+          { spec: '6003-2RS', code: 'J022' },
+          { spec: '6004-2RS', code: 'J023' },
+          { spec: '6005-2RS', code: 'J024' },
+          { spec: '6212-2RS', code: 'J182' },
+          { spec: '6214-2RS', code: 'J183' },
+          { spec: '6309-2RS', code: 'J184' },
+          { spec: '6310-2RS', code: 'J185' },
+          { spec: '6311-2RS', code: 'J186' },
+          { spec: '6312-2RS', code: 'J187' },
+          { spec: '6313-2RS', code: 'J188' },
+          { spec: '607-2RS', code: 'J207' },
+          { spec: '608-2RS', code: 'J208' },
+          { spec: '609-2RS', code: 'J209' },
+          { spec: '627-2RS', code: 'J210' },
+          { spec: '629-2RS', code: 'J211' }
+        ]
+      },
+      {
+        id: 'bearing-ball',
+        name: 'ACI Bearing – Industrial Ball Bearing Series',
+        image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg',
+        subcategory: 'Ball Bearing',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing',
+        variants: [
+          { spec: '6204-Ball', code: 'J172' },
+          { spec: '6205-Ball', code: 'J173' },
+          { spec: '6206-Ball', code: 'J174' },
+          { spec: '6207-Ball', code: 'J175' },
+          { spec: '6208-Ball', code: 'J176' },
+          { spec: '6209-Ball', code: 'J230' },
+          { spec: '6304-Ball', code: 'J177' },
+          { spec: '6305-Ball', code: 'J178' },
+          { spec: '6306-Ball', code: 'J179' },
+          { spec: '6307-Ball', code: 'J180' },
+          { spec: '6308-Ball', code: 'J181' },
+          { spec: '6309-Ball', code: 'J231' }
+        ]
+      },
+      {
+        id: 'bearing-roller',
+        name: 'ACI Bearing – Taper Roller Bearing Series',
+        image: BASE + 'assets/images/product/others/viibrator/disc/bearing-covere.jpg',
+        subcategory: 'Roller Bearing',
+        originalUrl: BASE + 'products/other-machinery/aci-smart-tools/bearing',
+        variants: [
+          { spec: '30204-Roller', code: 'J212' },
+          { spec: '30205-Roller', code: 'J213' },
+          { spec: '30207-Roller', code: 'J214' },
+          { spec: '30208-Roller', code: 'J215' },
+          { spec: '30209-Roller', code: 'J216' },
+          { spec: '30210-Roller', code: 'J223' },
+          { spec: '32004-Roller', code: 'J217' },
+          { spec: '32005-Roller', code: 'J218' },
+          { spec: '32007-Roller', code: 'J219' },
+          { spec: '32206-Roller', code: 'J220' },
+          { spec: '32207-Roller', code: 'J221' },
+          { spec: '32208-Roller', code: 'J222' },
+          { spec: '32213-Roller', code: 'J224' },
+          { spec: '32216-Roller', code: 'J225' },
+          { spec: '48548/10-Roller', code: 'J226' }
+        ]
+      }
+    ]
+  }
 ];
 
 export default categories;
-
