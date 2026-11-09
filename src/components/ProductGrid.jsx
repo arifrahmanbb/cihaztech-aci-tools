@@ -3,13 +3,14 @@ import ProductCard from './ProductCard.jsx';
 /**
  * ProductGrid Component
  * 
- * Strict responsive column layout matching Section 9:
- * - Mobile (< 768px): 2 cards per row (tested down to 320px)
- * - Tablet (768px - 1023px): 3 cards per row
- * - Laptop & Desktop (1024px - 1535px): 4 cards per row
- * - Large Desktop (1536px+ / 1920px): 5 cards per row
+ * Centered responsive grid inside 1320px container:
+ * - Mobile (< 640px): 2 cards per row (tested down to 320px)
+ * - Tablet (640px - 1023px): 2 to 3 cards per row
+ * - Desktop (1024px+):
+ *   - For <= 3 cards (e.g. Bearing): 3 columns spanning the container centered (max 410px each)
+ *   - For 4+ cards: 4 columns (max 320px each)
  * 
- * Consistent card heights with `items-stretch`.
+ * Uses flexbox with `justify-center` so cards are ALWAYS centered on the page.
  */
 export default function ProductGrid({ products = [] }) {
   if (!products.length) {
@@ -20,15 +21,25 @@ export default function ProductGrid({ products = [] }) {
     );
   }
 
+  const isThreeOrFewer = products.length <= 3;
+
   return (
-    <div className="w-full">
+    <div className="w-full flex justify-center">
       <ul
-        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-4 md:gap-5 lg:gap-6 items-stretch"
+        className="w-full flex flex-wrap justify-center gap-3.5 sm:gap-5 lg:gap-6"
         role="list"
         aria-label="Product list"
       >
         {products.map((product) => (
-          <li key={product.id} role="listitem" className="flex flex-col h-full">
+          <li
+            key={product.id}
+            role="listitem"
+            className={`flex flex-col h-full w-[calc(50%-7px)] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] ${
+              isThreeOrFewer
+                ? 'lg:w-[calc(33.333%-16px)] max-w-[400px]'
+                : 'lg:w-[calc(25%-18px)] max-w-[310px]'
+            } min-w-[140px]`}
+          >
             <ProductCard product={product} />
           </li>
         ))}
