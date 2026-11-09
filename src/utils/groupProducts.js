@@ -104,10 +104,23 @@ export function groupProducts(rawProducts, categoryId = null) {
     const groupKey = `${item.categoryId}::${imageKey}::${familyKey}`;
 
     if (!groupsMap.has(groupKey)) {
-      // Clean display name
+      // Clean display name and model
       let displayName = item.name;
-      if (item.family === 'Bearing') {
-        displayName = 'ACI Bearing';
+      let model = item.model || '';
+
+      if (item.categoryId === 'bearing') {
+        if (/2rs/i.test(item.family) || /2rs/i.test(item.name)) {
+          displayName = 'ACI Bearing (2RS)';
+          model = '2RS';
+        } else if (/ball/i.test(item.family) || /ball/i.test(item.name)) {
+          displayName = 'ACI Bearing (Ball)';
+          model = 'Ball';
+        } else if (/roller/i.test(item.family) || /roller/i.test(item.name)) {
+          displayName = 'ACI Bearing (Roller)';
+          model = 'Roller';
+        } else {
+          displayName = 'ACI Bearing';
+        }
       } else if (item.family === 'Pipe Wrench') {
         displayName = 'ACI Heavy Duty Pipe Wrench';
       } else if (item.family === 'Screwdriver') {
@@ -140,7 +153,7 @@ export function groupProducts(rawProducts, categoryId = null) {
         id: `grouped-${item.categoryId}-${familyKey.replace(/[^a-z0-9]+/g, '-')}-${groupsMap.size + 1}`,
         categoryId: item.categoryId,
         name: displayName,
-        model: item.model || '',
+        model: model,
         family: item.family || item.name,
         image: item.image,
         code: item.code || null,
@@ -169,7 +182,6 @@ export function groupProducts(rawProducts, categoryId = null) {
   // Post-process groups: compute headings and flags
   return Array.from(groupsMap.values()).map((group) => {
     const variationHeading = getVariationHeading(group.variations, group.family);
-    // If only 1 variation and its label is identical to product name or empty, treat as non-varying
     const hasMeaningfulVariations =
       group.variations.length > 1 ||
       (group.variations.length === 1 &&
@@ -205,4 +217,3 @@ export function getCategoriesWithGroupedProducts(categoriesList, allRawProducts)
 }
 
 export default groupProducts;
-

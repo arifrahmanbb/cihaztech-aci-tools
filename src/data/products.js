@@ -1264,771 +1264,848 @@ export const rawProducts = [
     "id": "br-1",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6201-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J000",
     "spec": "6201-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-2",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6201-2RS-RED",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J232",
     "spec": "6201-2RS-RED",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-3",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6202-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J001",
     "spec": "6202-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-4",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6203-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J002",
     "spec": "6203-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-5",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6203-2RS-RED",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J233",
     "spec": "6203-2RS-RED",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-6",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6204-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J003",
     "spec": "6204-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-7",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6204-2RS-RED",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J234",
     "spec": "6204-2RS-RED",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-8",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6205-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J004",
     "spec": "6205-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-9",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6205-2RS-RED",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J235",
     "spec": "6205-2RS-RED",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-10",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6206-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J005",
     "spec": "6206-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-11",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6206-2RS-RED",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J236",
     "spec": "6206-2RS-RED",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-12",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6207-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J006",
     "spec": "6207-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-13",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6208-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J007",
     "spec": "6208-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-14",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6209-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J008",
     "spec": "6209-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-15",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6210-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J009",
     "spec": "6210-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-16",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6211-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J010",
     "spec": "6211-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-17",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6301-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J011",
     "spec": "6301-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-18",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6302-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J012",
     "spec": "6302-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-19",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6302-2RS-RED",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J237",
     "spec": "6302-2RS-RED",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-20",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6303-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J013",
     "spec": "6303-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-21",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6304-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J014",
     "spec": "6304-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-22",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6304-2RS-RED",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J238",
     "spec": "6304-2RS-RED",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-23",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6305-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J015",
     "spec": "6305-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-24",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6306-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J016",
     "spec": "6306-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-25",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6307-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J017",
     "spec": "6307-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-26",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6308-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J018",
     "spec": "6308-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-27",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6000-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J019",
     "spec": "6000-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-28",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6001-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J020",
     "spec": "6001-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-29",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6001-2RS-RED",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J239",
     "spec": "6001-2RS-RED",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-30",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6002-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J021",
     "spec": "6002-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-31",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6003-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J022",
     "spec": "6003-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-32",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6004-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J023",
     "spec": "6004-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-33",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6004-2RS-RED",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J240",
     "spec": "6004-2RS-RED",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-34",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6005-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J024",
     "spec": "6005-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-35",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6005-2RS-RED",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J241",
     "spec": "6005-2RS-RED",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-36",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6212-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J182",
     "spec": "6212-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-37",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6214-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J183",
     "spec": "6214-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-38",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6309-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J184",
     "spec": "6309-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-39",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6310-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J185",
     "spec": "6310-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-40",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6311-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J186",
     "spec": "6311-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-41",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6312-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J187",
     "spec": "6312-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-42",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6313-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J188",
     "spec": "6313-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-43",
     "categoryId": "bearing",
     "name": "ACI-Bearing 607-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J207",
     "spec": "607-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-44",
     "categoryId": "bearing",
     "name": "ACI-Bearing 608-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J208",
     "spec": "608-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-45",
     "categoryId": "bearing",
     "name": "ACI-Bearing 609-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J209",
     "spec": "609-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-46",
     "categoryId": "bearing",
     "name": "ACI-Bearing 627-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J210",
     "spec": "627-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-47",
     "categoryId": "bearing",
     "name": "ACI-Bearing 629-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J211",
     "spec": "629-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-48",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6200-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J227",
     "spec": "6200-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-49",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6006-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J228",
     "spec": "6006-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-50",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6904-2RS",
-    "family": "Bearing",
+    "family": "Bearing 2RS",
     "code": "J229",
     "spec": "6904-2RS",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "2RS"
   },
   {
     "id": "br-51",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6209-Ball",
-    "family": "Bearing",
+    "family": "Bearing Ball",
     "code": "J230",
     "spec": "6209-Ball",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Ball"
   },
   {
     "id": "br-52",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6309-Ball",
-    "family": "Bearing",
+    "family": "Bearing Ball",
     "code": "J231",
     "spec": "6309-Ball",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Ball"
   },
   {
     "id": "br-53",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6204-Ball",
-    "family": "Bearing",
+    "family": "Bearing Ball",
     "code": "J172",
     "spec": "6204-Ball",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Ball"
   },
   {
     "id": "br-54",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6205-Ball",
-    "family": "Bearing",
+    "family": "Bearing Ball",
     "code": "J173",
     "spec": "6205-Ball",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Ball"
   },
   {
     "id": "br-55",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6206-Ball",
-    "family": "Bearing",
+    "family": "Bearing Ball",
     "code": "J174",
     "spec": "6206-Ball",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Ball"
   },
   {
     "id": "br-56",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6207-Ball",
-    "family": "Bearing",
+    "family": "Bearing Ball",
     "code": "J175",
     "spec": "6207-Ball",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Ball"
   },
   {
     "id": "br-57",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6208-Ball",
-    "family": "Bearing",
+    "family": "Bearing Ball",
     "code": "J176",
     "spec": "6208-Ball",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Ball"
   },
   {
     "id": "br-58",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6304-Ball",
-    "family": "Bearing",
+    "family": "Bearing Ball",
     "code": "J177",
     "spec": "6304-Ball",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Ball"
   },
   {
     "id": "br-59",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6305-Ball",
-    "family": "Bearing",
+    "family": "Bearing Ball",
     "code": "J178",
     "spec": "6305-Ball",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Ball"
   },
   {
     "id": "br-60",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6306-Ball",
-    "family": "Bearing",
+    "family": "Bearing Ball",
     "code": "J179",
     "spec": "6306-Ball",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Ball"
   },
   {
     "id": "br-61",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6307-Ball",
-    "family": "Bearing",
+    "family": "Bearing Ball",
     "code": "J180",
     "spec": "6307-Ball",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Ball"
   },
   {
     "id": "br-62",
     "categoryId": "bearing",
     "name": "ACI-Bearing 6308-Ball",
-    "family": "Bearing",
+    "family": "Bearing Ball",
     "code": "J181",
     "spec": "6308-Ball",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Ball"
   },
   {
     "id": "br-63",
     "categoryId": "bearing",
     "name": "ACI-Bearing 30204-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J212",
     "spec": "30204-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-64",
     "categoryId": "bearing",
     "name": "ACI-Bearing 30205-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J213",
     "spec": "30205-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-65",
     "categoryId": "bearing",
     "name": "ACI-Bearing 30207-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J214",
     "spec": "30207-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-66",
     "categoryId": "bearing",
     "name": "ACI-Bearing 30208-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J215",
     "spec": "30208-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-67",
     "categoryId": "bearing",
     "name": "ACI-Bearing 30209-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J216",
     "spec": "30209-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-68",
     "categoryId": "bearing",
     "name": "ACI-Bearing 32004-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J217",
     "spec": "32004-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-69",
     "categoryId": "bearing",
     "name": "ACI-Bearing 32005-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J218",
     "spec": "32005-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-70",
     "categoryId": "bearing",
     "name": "ACI-Bearing 32007-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J219",
     "spec": "32007-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-71",
     "categoryId": "bearing",
     "name": "ACI-Bearing 32206-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J220",
     "spec": "32206-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-72",
     "categoryId": "bearing",
     "name": "ACI-Bearing 32207-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J221",
     "spec": "32207-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-73",
     "categoryId": "bearing",
     "name": "ACI-Bearing 32208-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J222",
     "spec": "32208-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-74",
     "categoryId": "bearing",
     "name": "ACI-Bearing 30210-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J223",
     "spec": "30210-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-75",
     "categoryId": "bearing",
     "name": "ACI-Bearing 32213-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J224",
     "spec": "32213-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-76",
     "categoryId": "bearing",
     "name": "ACI-Bearing 32216-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J225",
     "spec": "32216-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   },
   {
     "id": "br-77",
     "categoryId": "bearing",
     "name": "ACI-Bearing 48548/10-Roller",
-    "family": "Bearing",
+    "family": "Bearing Roller",
     "code": "J226",
     "spec": "48548/10-Roller",
     "image": "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing"
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    "model": "Roller"
   }
 ];
 
