@@ -6,9 +6,9 @@ const INITIAL_COUNT = 3;
 
 /**
  * Renders a single category section:
- * – Section heading with sequential number
- * – First 3 products (or all if ≤3)
- * – See More / Show Less toggle (independent per category)
+ * – Section heading with sequential number and product count
+ * – First 3 products initially (or all if ≤3)
+ * – Beautiful centered See More / Show Less toggle button
  */
 export default function CategorySection({ category, index }) {
   const [expanded, setExpanded] = useState(false);
@@ -23,41 +23,40 @@ export default function CategorySection({ category, index }) {
   return (
     <section
       id={category.id}
-      className="pt-16 pb-4 md:pt-24"
+      className="pt-16 pb-8 sm:pt-20 sm:pb-10 md:pt-24 md:pb-12 border-b border-gray-200/60 last:border-b-0"
       aria-labelledby={`section-heading-${category.id}`}
     >
       {/* ── Section Header ── */}
-      <div className="mb-7 flex items-start gap-4">
-        {/* Sequential number badge */}
-        <span
-          className="shrink-0 mt-0.5 w-9 h-9 rounded-full bg-[#c8102e] text-white text-sm font-bold flex items-center justify-center select-none"
-          aria-hidden="true"
-        >
-          {String(index + 1).padStart(2, '0')}
-        </span>
-
-        <div>
-          <h2
-            id={`section-heading-${category.id}`}
-            className="text-xl sm:text-2xl font-bold text-gray-900 leading-tight"
+      <div className="mb-6 sm:mb-8 md:mb-10 flex items-center justify-between gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
+          {/* Sequential number badge */}
+          <span
+            className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-xl bg-gradient-to-br from-[#d81b3a] to-[#a80c23] text-white text-xs sm:text-sm md:text-base font-extrabold flex items-center justify-center shadow-xs select-none"
+            aria-hidden="true"
           >
-            {category.name}
-          </h2>
-          <p className="mt-1 text-xs text-gray-500">
-            {category.products.length} product{category.products.length !== 1 ? 's' : ''}
-          </p>
+            {String(index + 1).padStart(2, '0')}
+          </span>
+
+          <div>
+            <h2
+              id={`section-heading-${category.id}`}
+              className="text-lg sm:text-2xl md:text-3xl font-bold text-gray-900 tracking-tight leading-tight"
+            >
+              {category.name}
+            </h2>
+            <p className="mt-0.5 text-xs sm:text-sm text-gray-500 font-medium">
+              {category.products.length} product{category.products.length !== 1 ? 's' : ''} available
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="h-px bg-gray-200 mb-7" aria-hidden="true" />
-
-      {/* ── Product Grid ── */}
+      {/* ── Responsive Product Grid ── */}
       <ProductGrid products={visibleProducts} categoryId={category.id} />
 
-      {/* ── See More / Show Less ── */}
+      {/* ── Perfectly Centered See More / Show Less Button ── */}
       {hasMore && (
-        <div className="mt-8 flex justify-center">
+        <div className="w-full flex justify-center items-center mt-8 sm:mt-10 md:mt-12">
           <SeeMoreButton
             expanded={expanded}
             onClick={toggle}
@@ -68,4 +67,3 @@ export default function CategorySection({ category, index }) {
     </section>
   );
 }
-
