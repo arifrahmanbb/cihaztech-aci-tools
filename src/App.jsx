@@ -5,14 +5,15 @@ import categories from './data/products.js';
 
 /**
  * Root application component.
- * Single-page product showcase with device-based responsive scaling.
+ * Single-page product showcase with centered, device-scaled responsive layout.
  */
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50/50">
+    <div className="min-h-screen flex flex-col bg-gray-50/60">
       <Header categories={categories} />
 
-      <main className="flex-1 w-full max-w-7xl 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+      {/* ── Device-based Centered Main Container ── */}
+      <main className="flex-1 w-full max-w-6xl xl:max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-2 sm:py-4">
         {categories.map((category, index) => (
           <CategorySection key={category.id} category={category} index={index} />
         ))}

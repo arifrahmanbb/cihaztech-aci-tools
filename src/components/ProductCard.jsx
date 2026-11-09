@@ -23,7 +23,7 @@ export default function ProductCard({ product }) {
     : product.variants.slice(0, initialVariantsCount);
 
   return (
-    <article className="group bg-white border border-gray-200/90 rounded-xl sm:rounded-2xl overflow-hidden h-full flex flex-col hover:border-red-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+    <article className="group bg-white border border-gray-200/90 rounded-xl sm:rounded-2xl overflow-hidden h-full w-full flex flex-col hover:border-red-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
       {/* ── Image Container (Scales up on larger devices) ── */}
       <div className="relative w-full h-36 sm:h-48 md:h-56 lg:h-64 xl:h-72 bg-gradient-to-b from-gray-50/80 to-gray-100/50 flex items-center justify-center p-3 sm:p-5 md:p-6 lg:p-7 border-b border-gray-100 overflow-hidden">
         <img

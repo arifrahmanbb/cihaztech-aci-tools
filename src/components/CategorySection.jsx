@@ -5,10 +5,10 @@ import SeeMoreButton from './SeeMoreButton.jsx';
 const INITIAL_COUNT = 3;
 
 /**
- * Renders a single category section:
- * – Section heading with sequential number and product count
- * – First 3 products initially (or all if ≤3)
- * – Beautiful centered See More / Show Less toggle button
+ * Centered Category Section:
+ * – Centered category heading, badge, and product count
+ * – Centered product cards grid (no awkward left-alignment or empty gaps)
+ * – Centered See More / Show Less toggle button
  */
 export default function CategorySection({ category, index }) {
   const [expanded, setExpanded] = useState(false);
@@ -23,12 +23,12 @@ export default function CategorySection({ category, index }) {
   return (
     <section
       id={category.id}
-      className="pt-16 pb-8 sm:pt-20 sm:pb-10 md:pt-24 md:pb-12 border-b border-gray-200/60 last:border-b-0"
+      className="pt-16 pb-10 sm:pt-20 sm:pb-14 md:pt-24 md:pb-16 border-b border-gray-200/60 last:border-b-0 flex flex-col items-center"
       aria-labelledby={`section-heading-${category.id}`}
     >
-      {/* ── Section Header ── */}
-      <div className="mb-6 sm:mb-8 md:mb-10 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3 sm:gap-4">
+      {/* ── Center-Aligned Category Header ── */}
+      <div className="mb-8 sm:mb-10 md:mb-12 text-center flex flex-col items-center justify-center">
+        <div className="inline-flex items-center justify-center gap-2.5 sm:gap-3.5">
           {/* Sequential number badge */}
           <span
             className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-xl bg-gradient-to-br from-[#d81b3a] to-[#a80c23] text-white text-xs sm:text-sm md:text-base font-extrabold flex items-center justify-center shadow-xs select-none"
@@ -37,24 +37,28 @@ export default function CategorySection({ category, index }) {
             {String(index + 1).padStart(2, '0')}
           </span>
 
-          <div>
-            <h2
-              id={`section-heading-${category.id}`}
-              className="text-lg sm:text-2xl md:text-3xl font-bold text-gray-900 tracking-tight leading-tight"
-            >
-              {category.name}
-            </h2>
-            <p className="mt-0.5 text-xs sm:text-sm text-gray-500 font-medium">
-              {category.products.length} product{category.products.length !== 1 ? 's' : ''} available
-            </p>
-          </div>
+          <h2
+            id={`section-heading-${category.id}`}
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight leading-tight"
+          >
+            {category.name}
+          </h2>
         </div>
+
+        <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-gray-500 font-medium">
+          {category.products.length} product{category.products.length !== 1 ? 's' : ''} available
+        </p>
+
+        {/* Subtle decorative center accent */}
+        <div className="w-12 h-1 bg-[#c8102e]/30 rounded-full mt-3 sm:mt-4" aria-hidden="true" />
       </div>
 
-      {/* ── Responsive Product Grid ── */}
-      <ProductGrid products={visibleProducts} categoryId={category.id} />
+      {/* ── Centered Product Cards Grid ── */}
+      <div className="w-full flex justify-center">
+        <ProductGrid products={visibleProducts} categoryId={category.id} />
+      </div>
 
-      {/* ── Perfectly Centered See More / Show Less Button ── */}
+      {/* ── Centered See More / Show Less Button ── */}
       {hasMore && (
         <div className="w-full flex justify-center items-center mt-8 sm:mt-10 md:mt-12">
           <SeeMoreButton

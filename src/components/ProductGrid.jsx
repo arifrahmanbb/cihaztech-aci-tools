@@ -1,31 +1,40 @@
 import ProductCard from './ProductCard.jsx';
 
 /**
- * Mobile-first responsive product grid:
- * – Mobile (<640px):          2 columns (compact, touch-friendly)
- * – Small Tablet (640-768px):  2 columns (cards expand significantly)
- * – Tablet (768-1024px):       3 columns (generous breathing room)
- * – Desktop (1024-1440px):     3 columns (large, detailed showcase cards)
- * – Large Desktop (1440px+):   3 to 4 columns depending on available width
+ * Mobile-first responsive, horizontally centered product showcase:
+ * – Mobile (<640px):   2 columns (50% - gap), compact & touch-friendly
+ * – Tablet (640-1024): 3 columns (33.33% - gap), balanced and clean
+ * – Desktop (1024px+): 3 columns, cards scale up generously (up to 380px wide)
+ *
+ * Uses flexbox with `justify-center` so that whether there are 1, 2, 3, or more products,
+ * the cards are ALWAYS perfectly centered horizontally on screen (no awkward empty right-side gaps).
  */
 export default function ProductGrid({ products, categoryId }) {
   if (!products.length) {
     return (
-      <p className="text-sm text-gray-400 italic py-6">No products available in this category.</p>
+      <div className="w-full text-center py-8">
+        <p className="text-sm text-gray-400 italic">No products available in this category.</p>
+      </div>
     );
   }
 
   return (
-    <ul
-      className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-4 gap-3.5 sm:gap-5 md:gap-6 lg:gap-8"
-      role="list"
-      aria-label="Product list"
-    >
-      {products.map((product) => (
-        <li key={product.id} role="listitem" className="h-full">
-          <ProductCard product={product} />
-        </li>
-      ))}
-    </ul>
+    <div className="w-full flex justify-center">
+      <ul
+        className="w-full flex flex-wrap justify-center gap-3 sm:gap-5 md:gap-6 lg:gap-8"
+        role="list"
+        aria-label="Product list"
+      >
+        {products.map((product) => (
+          <li
+            key={product.id}
+            role="listitem"
+            className="w-[calc(50%-6px)] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-16px)] lg:w-[calc(33.333%-22px)] max-w-[380px] min-w-[140px] flex flex-col"
+          >
+            <ProductCard product={product} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
