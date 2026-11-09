@@ -1,36 +1,34 @@
 import ProductCard from './ProductCard.jsx';
 
 /**
- * Mobile-first responsive, horizontally centered product showcase:
- * – Mobile (<640px):   2 columns (50% - gap), compact & touch-friendly
- * – Tablet (640-1024): 3 columns (33.33% - gap), balanced and clean
- * – Desktop (1024px+): 3 columns, cards scale up generously (up to 380px wide)
- *
- * Uses flexbox with `justify-center` so that whether there are 1, 2, 3, or more products,
- * the cards are ALWAYS perfectly centered horizontally on screen (no awkward empty right-side gaps).
+ * ProductGrid Component
+ * 
+ * Strict responsive column layout matching Section 9:
+ * - Mobile (< 768px): 2 cards per row (tested down to 320px)
+ * - Tablet (768px - 1023px): 3 cards per row
+ * - Laptop & Desktop (1024px - 1535px): 4 cards per row
+ * - Large Desktop (1536px+ / 1920px): 5 cards per row
+ * 
+ * Consistent card heights with `items-stretch`.
  */
-export default function ProductGrid({ products, categoryId }) {
+export default function ProductGrid({ products = [] }) {
   if (!products.length) {
     return (
       <div className="w-full text-center py-8">
-        <p className="text-sm text-gray-400 italic">No products available in this category.</p>
+        <p className="text-xs sm:text-sm text-gray-400 italic">No products available in this category.</p>
       </div>
     );
   }
 
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full">
       <ul
-        className="w-full flex flex-wrap justify-center gap-3 sm:gap-5 md:gap-6 lg:gap-8"
+        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-4 md:gap-5 lg:gap-6 items-stretch"
         role="list"
         aria-label="Product list"
       >
         {products.map((product) => (
-          <li
-            key={product.id}
-            role="listitem"
-            className="w-[calc(50%-6px)] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-16px)] lg:w-[calc(33.333%-22px)] max-w-[380px] min-w-[140px] flex flex-col"
-          >
+          <li key={product.id} role="listitem" className="flex flex-col h-full">
             <ProductCard product={product} />
           </li>
         ))}

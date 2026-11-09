@@ -3,11 +3,12 @@ import { Menu, X } from 'lucide-react';
 
 /**
  * Fixed top header with:
- * – ACI Motors logo (click to scroll to top)
- * – Only Category menu items in navigation (desktop pills & mobile drawer)
- * – Clicking any category smooth-scrolls to its section
+ * – Official ACI Motors logo
+ * – ACI Product Catalogue title
+ * – Category navigation pills that smooth-scroll to their section
+ * – Mobile drawer navigation
  */
-export default function Header({ categories }) {
+export default function Header({ categories = [] }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('');
   const drawerRef = useRef(null);
@@ -27,7 +28,9 @@ export default function Header({ categories }) {
   /* Prevent body scroll when drawer is open */
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [mobileOpen]);
 
   /* Track active category on scroll */
@@ -70,28 +73,35 @@ export default function Header({ categories }) {
         className="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-xs"
         style={{ height: 'var(--header-height)' }}
       >
-        <div className="max-w-7xl mx-auto h-full flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-          {/* ── Logo ── */}
+        <div className="max-w-7xl mx-auto h-full flex items-center justify-between gap-3 px-3.5 sm:px-6 lg:px-8">
+          {/* ── Logo & Title ── */}
           <button
             type="button"
             onClick={scrollToTop}
             className="flex items-center gap-2.5 shrink-0 text-left focus:outline-none cursor-pointer group"
-            aria-label="ACI Motors – scroll to top"
+            aria-label="ACI Product Catalogue – scroll to top"
           >
             <img
               src="https://acimotors-bd.com/assets/images/acimotors-logo.svg"
-              alt="ACI Motors"
-              className="h-8 sm:h-9 w-auto transition-transform group-hover:scale-105"
-              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              alt="ACI Motors Logo"
+              className="h-7 sm:h-8 md:h-9 w-auto transition-transform group-hover:scale-105"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
             />
-            <span className="hidden sm:inline text-base sm:text-lg font-bold text-gray-900 tracking-tight">
-              ACI Motors
-            </span>
+            <div className="flex flex-col">
+              <span className="text-sm sm:text-base font-extrabold text-gray-900 tracking-tight leading-tight">
+                ACI Product Catalogue
+              </span>
+              <span className="text-[10px] text-gray-400 font-medium hidden sm:block">
+                Official Machinery & Smart Tools
+              </span>
+            </div>
           </button>
 
-          {/* ── Desktop Category Navigation (Just Category Menu) ── */}
+          {/* ── Desktop Category Navigation ── */}
           <nav
-            className="hidden lg:flex items-center gap-1.5 overflow-x-auto scrollbar-none py-1"
+            className="hidden xl:flex items-center gap-1.5 overflow-x-auto scrollbar-none py-1"
             aria-label="Categories"
           >
             {categories.map((cat) => {
@@ -100,7 +110,7 @@ export default function Header({ categories }) {
                 <button
                   key={cat.id}
                   onClick={() => scrollTo(cat.id)}
-                  className={`shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer ${
+                  className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer ${
                     isActive
                       ? 'bg-[#c8102e] text-white shadow-xs'
                       : 'text-gray-600 hover:text-[#c8102e] hover:bg-red-50'
@@ -114,12 +124,12 @@ export default function Header({ categories }) {
 
           {/* ── Mobile Hamburger ── */}
           <button
-            className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
+            className="xl:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
             onClick={() => setMobileOpen((o) => !o)}
             aria-label={mobileOpen ? 'Close category menu' : 'Open category menu'}
             aria-expanded={mobileOpen}
           >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </header>
@@ -129,58 +139,56 @@ export default function Header({ categories }) {
 
       {/* ── Mobile Drawer Overlay ── */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-black/50 backdrop-blur-xs lg:hidden" aria-hidden="true" />
+        <div
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-xs transition-opacity xl:hidden"
+          aria-hidden="true"
+        />
       )}
 
-      {/* ── Mobile Drawer (Strictly Category Menu Items Only) ── */}
+      {/* ── Mobile Drawer Content ── */}
       <div
         ref={drawerRef}
-        className={`
-          fixed top-0 right-0 z-50 h-full w-72 sm:w-80 bg-white shadow-2xl
-          transform transition-transform duration-300 ease-out lg:hidden flex flex-col
-          ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}
-        `}
-        aria-label="Category navigation"
-        role="navigation"
+        className={`fixed top-0 right-0 bottom-0 z-50 w-72 max-w-[85vw] bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-in-out xl:hidden ${
+          mobileOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Category Navigation"
       >
-        {/* Drawer Top Bar */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-          <img
-            src="https://acimotors-bd.com/assets/images/acimotors-logo.svg"
-            alt="ACI Motors"
-            className="h-7 w-auto"
-            onError={(e) => { e.currentTarget.style.display = 'none'; }}
-          />
+        <div className="flex items-center justify-between p-4 border-b border-gray-100">
+          <div className="flex items-center gap-2">
+            <img
+              src="https://acimotors-bd.com/assets/images/acimotors-logo.svg"
+              alt="ACI Motors"
+              className="h-6 w-auto"
+            />
+            <span className="font-bold text-sm text-gray-900">Categories</span>
+          </div>
           <button
             onClick={() => setMobileOpen(false)}
-            className="p-1.5 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors cursor-pointer"
+            className="p-1.5 text-gray-500 hover:text-gray-900 rounded-md hover:bg-gray-100 transition-colors cursor-pointer"
             aria-label="Close menu"
           >
             <X size={20} />
           </button>
         </div>
 
-        {/* Category Menu Items List Only */}
-        <nav className="overflow-y-auto flex-1 p-3 space-y-1">
-          {categories.map((cat) => {
+        <nav className="flex-1 overflow-y-auto p-3 space-y-1">
+          {categories.map((cat, idx) => {
             const isActive = activeCategory === cat.id;
             return (
               <button
                 key={cat.id}
                 onClick={() => scrollTo(cat.id)}
-                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm transition-all duration-150 text-left cursor-pointer ${
+                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-left text-xs font-medium transition-colors cursor-pointer ${
                   isActive
-                    ? 'bg-[#c8102e] text-white font-semibold shadow-xs'
-                    : 'text-gray-700 hover:bg-red-50 hover:text-[#c8102e] font-medium'
+                    ? 'bg-red-50 text-[#c8102e] font-bold'
+                    : 'text-gray-700 hover:bg-gray-50'
                 }`}
               >
                 <span>{cat.name}</span>
-                <span
-                  className={`text-xs px-2 py-0.5 rounded-full font-mono ${
-                    isActive ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-500'
-                  }`}
-                >
-                  {cat.products.length}
+                <span className="text-[10px] text-gray-400 font-mono">
+                  {String(idx + 1).padStart(2, '0')}
                 </span>
               </button>
             );
