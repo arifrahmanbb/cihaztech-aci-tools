@@ -75,12 +75,12 @@ export default function ProductCard({ product }) {
           )}
         </div>
 
-        {/* ── Available Variations List ── */}
+        {/* ── Available Variations List (3 items initially visible) ── */}
         {hasMultipleVariations && (
           <VariationList
             variations={variations}
             heading={heading}
-            initialLimit={4}
+            initialLimit={3}
           />
         )}
       </div>

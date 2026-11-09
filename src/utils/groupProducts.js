@@ -25,7 +25,7 @@ export function getVariationHeading(variations, family = '') {
   if (!variations || variations.length === 0) return 'Available Variations';
 
   const familyLower = family.toLowerCase();
-  if (familyLower.includes('bearing')) return 'Available Specifications';
+  if (familyLower.includes('bearing')) return 'Available Models';
 
   let hasSizes = false;
   let hasWeights = false;
@@ -110,13 +110,13 @@ export function groupProducts(rawProducts, categoryId = null) {
 
       if (item.categoryId === 'bearing') {
         if (/2rs/i.test(item.family) || /2rs/i.test(item.name)) {
-          displayName = 'ACI Bearing (2RS)';
+          displayName = 'ACI 2RS Bearing';
           model = '2RS';
         } else if (/ball/i.test(item.family) || /ball/i.test(item.name)) {
-          displayName = 'ACI Bearing (Ball)';
+          displayName = 'ACI Ball Bearing';
           model = 'Ball';
         } else if (/roller/i.test(item.family) || /roller/i.test(item.name)) {
-          displayName = 'ACI Bearing (Roller)';
+          displayName = 'ACI Roller Bearing';
           model = 'Roller';
         } else {
           displayName = 'ACI Bearing';

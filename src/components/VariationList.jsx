@@ -5,17 +5,19 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
  * VariationList Component
  * 
  * Displays available product variations (sizes, weights, models, specifications)
- * as a clean, structured, responsive list.
+ * as a clean, vertical bulleted list matching Section 4.
  * 
- * Guarantees:
- * - Redundant codes (e.g. "4 Inch (J026) (J026)") are NEVER displayed.
- * - Clean bulleted or tagged presentation matching Section 4.
- * - Collapsible toggle if variation count exceeds initial limit, keeping cards balanced.
+ * Adheres to:
+ * - 3 items initially shown in list format ("3 ta item hobe list akara")
+ * - Bullet list format: "• Model / Size"
+ * - No duplicate codes
+ * - Interactive toggle for remaining items (+X more / Show fewer)
+ * - Scrollable view when fully expanded for large datasets (e.g. 50 items)
  */
 export default function VariationList({
   variations = [],
   heading = 'Available Variations',
-  initialLimit = 4
+  initialLimit = 3
 }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -27,20 +29,24 @@ export default function VariationList({
 
   return (
     <div className="mt-3 pt-3 border-t border-gray-100 flex flex-col">
-      {/* ── Section Heading (e.g. Available Sizes, Available Weights) ── */}
+      {/* ── Section Heading (e.g. Available Models, Available Sizes) ── */}
       <div className="flex items-center justify-between mb-2">
-        <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-gray-500">
+        <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-gray-500">
           {heading}:
         </span>
-        <span className="text-[10px] text-gray-400 font-mono">
-          {variations.length} {variations.length === 1 ? 'option' : 'options'}
+        <span className="text-[10px] text-gray-400 font-mono font-medium">
+          {variations.length} {variations.length === 1 ? 'item' : 'items'}
         </span>
       </div>
 
-      {/* ── Structured Variation List ── */}
-      <ul className="flex flex-wrap gap-1.5" role="list">
+      {/* ── Vertical Bullet List Format (3 items visible initially) ── */}
+      <ul
+        className={`flex flex-col space-y-1 ${
+          expanded && variations.length > 8 ? 'max-h-56 overflow-y-auto pr-1' : ''
+        }`}
+        role="list"
+      >
         {visibleList.map((item, idx) => {
-          // Format label & code cleanly without redundant duplicate codes
           const label = item.label || item.spec || item.name || '';
           const code = item.code || '';
           const showCode = code && !label.toLowerCase().includes(code.toLowerCase());
@@ -48,14 +54,16 @@ export default function VariationList({
           return (
             <li
               key={item.id || idx}
-              className="inline-flex items-center text-[11px] sm:text-xs bg-gray-50 hover:bg-red-50/60 text-gray-800 hover:text-[#c8102e] px-2 py-0.5 rounded-md font-medium border border-gray-200/80 transition-colors"
+              className="flex items-center text-xs sm:text-sm text-gray-800 py-0.5 transition-colors group-hover:text-gray-900"
             >
-              <span className="text-gray-400 mr-1.5 select-none leading-none">•</span>
-              <span className="truncate max-w-[160px] sm:max-w-[200px]" title={label}>
+              <span className="text-[#c8102e] mr-2 text-base leading-none select-none shrink-0">
+                •
+              </span>
+              <span className="truncate font-medium text-gray-700 hover:text-gray-900" title={label}>
                 {label}
               </span>
               {showCode && (
-                <span className="ml-1 text-[10px] text-gray-400 font-mono font-normal">
+                <span className="ml-1.5 text-[11px] text-gray-400 font-mono shrink-0">
                   ({code})
                 </span>
               )}
@@ -64,12 +72,12 @@ export default function VariationList({
         })}
       </ul>
 
-      {/* ── Show More / Less Variations Toggle ── */}
+      {/* ── Show More / Less Toggle ── */}
       {hasMore && (
         <button
           type="button"
           onClick={() => setExpanded((prev) => !prev)}
-          className="mt-2 self-start inline-flex items-center gap-1 text-[11px] sm:text-xs font-semibold text-[#c8102e] hover:text-[#a00d24] hover:underline cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-200 rounded px-1 py-0.5 transition-colors"
+          className="mt-2.5 self-start inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold text-[#c8102e] hover:text-[#91081c] hover:underline cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-200 rounded px-1 py-0.5 transition-colors"
           aria-expanded={expanded}
         >
           {expanded ? (
@@ -80,7 +88,7 @@ export default function VariationList({
           ) : (
             <>
               <ChevronDown size={13} aria-hidden="true" />
-              <span>+{remainingCount} more</span>
+              <span>+{remainingCount} more models</span>
             </>
           )}
         </button>
@@ -88,4 +96,3 @@ export default function VariationList({
     </div>
   );
 }
-
