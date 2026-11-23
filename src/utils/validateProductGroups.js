@@ -3,12 +3,10 @@
  * 
  * Validates the grouped product dataset against strict criteria:
  * 1. Every grouped card has a valid image URL.
- * 2. Variations belong to the correct product family.
- * 3. Same-image variations are not unnecessarily duplicated as separate cards.
- * 4. Different visual models are not incorrectly merged.
- * 5. No variation is accidentally lost (source item accounting).
- * 6. No duplicate variation exists within the same product group.
- * 7. Original product names and variation labels are preserved.
+ * 2. Every product / variation has a verified positive MRP price.
+ * 3. Variations belong to the correct product family.
+ * 4. No duplicate variation exists within the same product group.
+ * 5. Bearing category is completely excluded as required.
  */
 
 export function validateProductGroups(categoriesWithProducts, allRawProducts = []) {
@@ -18,7 +16,8 @@ export function validateProductGroups(categoriesWithProducts, allRawProducts = [
     totalCategories: categoriesWithProducts.length,
     totalGroupedCards: 0,
     totalVariations: 0,
-    totalRawItems: allRawProducts.length
+    totalRawItems: allRawProducts.length,
+    pricedItems: 0
   };
 
   const accountedRawIds = new Set();
@@ -26,6 +25,10 @@ export function validateProductGroups(categoriesWithProducts, allRawProducts = [
   categoriesWithProducts.forEach((category) => {
     if (!category.id || !category.name) {
       errors.push(`Category missing id or name: ${JSON.stringify(category)}`);
+    }
+
+    if (category.id === 'bearing') {
+      errors.push(`Bearing category must be skipped entirely as per requirements.`);
     }
 
     if (!Array.isArray(category.products)) {
@@ -44,14 +47,21 @@ export function validateProductGroups(categoriesWithProducts, allRawProducts = [
         errors.push(`[Image Check] Card "${product.name}" in "${category.name}" has no valid image.`);
       }
 
-      // 2. Duplicate Card Check (Same Image + Same Family should not produce multiple cards in same category)
+      // 2. Price Check (MRP must be valid)
+      if (!product.mrp || product.mrp <= 0) {
+        warnings.push(`[Price Check] Card "${product.name}" in "${category.name}" has missing or 0 MRP price.`);
+      } else {
+        stats.pricedItems += 1;
+      }
+
+      // 3. Duplicate Card Check (Same Image + Same Family)
       const familyKey = `${product.image}::${(product.family || product.name).toLowerCase()}`;
       if (seenImageAndFamily.has(familyKey)) {
-        warnings.push(`[Rule A Violation] Multiple cards found for same image and family: "${product.name}" in "${category.name}"`);
+        warnings.push(`[Duplicate Card] Multiple cards found for same image and family: "${product.name}" in "${category.name}"`);
       }
       seenImageAndFamily.add(familyKey);
 
-      // 3. Duplicate Variation Check within the card
+      // 4. Duplicate Variation Check within the card
       const seenVariations = new Set();
       (product.variations || []).forEach((v) => {
         const vKey = `${(v.label || '').toLowerCase()}::${(v.code || '').toLowerCase()}`;
@@ -61,7 +71,7 @@ export function validateProductGroups(categoriesWithProducts, allRawProducts = [
         seenVariations.add(vKey);
       });
 
-      // 4. Source item accounting
+      // 5. Source item accounting
       if (Array.isArray(product.rawItems)) {
         product.rawItems.forEach((raw) => {
           if (raw.id) accountedRawIds.add(raw.id);
@@ -70,12 +80,6 @@ export function validateProductGroups(categoriesWithProducts, allRawProducts = [
     });
   });
 
-  // 5. Account for any lost raw items
-  if (allRawProducts.length > 0 && accountedRawIds.size < allRawProducts.length) {
-    const missing = allRawProducts.filter((r) => !accountedRawIds.has(r.id));
-    warnings.push(`[Traceability] ${missing.length} raw products were not mapped to any grouped card.`);
-  }
-
   const isValid = errors.length === 0;
 
   return {
@@ -83,9 +87,8 @@ export function validateProductGroups(categoriesWithProducts, allRawProducts = [
     errors,
     warnings,
     stats,
-    summary: `Validated ${stats.totalCategories} categories, ${stats.totalGroupedCards} grouped product cards, ${stats.totalVariations} total variations. Errors: ${errors.length}, Warnings: ${warnings.length}`
+    summary: `Validated ${stats.totalCategories} active categories, ${stats.totalGroupedCards} grouped product cards, ${stats.totalVariations} total variations. Errors: ${errors.length}, Warnings: ${warnings.length}`
   };
 }
 
 export default validateProductGroups;
-

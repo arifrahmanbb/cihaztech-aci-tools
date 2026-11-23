@@ -1,31 +1,17 @@
 /**
- * Critical Product Grouping Logic
+ * Critical Product Grouping Logic with Verified MRP Pricing
  * 
- * RULE A: SAME IMAGE = SAME PRODUCT CARD
- * If multiple product entries share the same product image and represent
- * variations of the same product family, display only ONE product card.
- * Under that card, display all available variations as a structured list.
- * 
- * RULE B: DIFFERENT IMAGE = DIFFERENT PRODUCT CARD
- * If a product has a genuinely different product image or visually distinct model,
- * create a separate product card.
- * 
- * RULE C: NEVER MERGE DIFFERENT PRODUCT FAMILIES
- * Do not group products only because their names are similar.
- * Do not merge different product types.
- * Use the original product image, product identity, model information,
- * and source data together to determine grouping.
+ * - Groups multiple variations sharing the same image & product family into ONE card.
+ * - Retains separate cards for distinct visual models.
+ * - Attaches authentic MRP prices to both the card (range or single) and each variation.
+ * - Strictly excludes TP prices.
  */
 
 /**
  * Determine the user-friendly variation heading for a group.
- * Examples: "Available Sizes", "Available Weights", "Available Specifications", "Available Models".
  */
 export function getVariationHeading(variations, family = '') {
-  if (!variations || variations.length === 0) return 'Available Variations';
-
-  const familyLower = family.toLowerCase();
-  if (familyLower.includes('bearing')) return 'Available Models';
+  if (!variations || variations.length === 0) return 'Available Options';
 
   let hasSizes = false;
   let hasWeights = false;
@@ -45,16 +31,16 @@ export function getVariationHeading(variations, family = '') {
   if (hasSizes) return 'Available Sizes';
   if (hasWeights) return 'Available Weights';
   if (hasSpecs) return 'Available Specifications';
-  return 'Available Variations';
+  return 'Available Models';
 }
 
 /**
- * Clean and normalize a variation label and code so redundant code tags
- * like "4 Inch (J026) (J026)" never happen.
+ * Clean and normalize a variation label, code, and MRP price.
  */
 export function normalizeVariation(rawVar, index) {
   let rawLabel = (rawVar.spec || rawVar.label || rawVar.name || rawVar.model || '').trim();
   let code = (rawVar.code || '').trim();
+  const mrp = Number(rawVar.mrp) || 0;
 
   // If label has trailing parenthesized code matching code, e.g. "4 Inch (J026)"
   const parenMatch = rawLabel.match(/^(.*?)\s*\(([^)]+)\)$/);
@@ -63,7 +49,6 @@ export function normalizeVariation(rawVar, index) {
     if (!code) {
       code = insideParen;
     }
-    // If the paren matched the code, strip it from the label so code isn't duplicated
     if (code.toLowerCase() === insideParen.toLowerCase()) {
       rawLabel = parenMatch[1].trim();
     }
@@ -71,7 +56,7 @@ export function normalizeVariation(rawVar, index) {
 
   // Fallback: If label is empty, use model or code
   if (!rawLabel) {
-    rawLabel = rawVar.model || code || `Variant ${index + 1}`;
+    rawLabel = rawVar.model || code || `Model ${index + 1}`;
   }
 
   return {
@@ -79,16 +64,18 @@ export function normalizeVariation(rawVar, index) {
     label: rawLabel,
     code: code || null,
     spec: rawVar.spec || rawLabel,
+    mrp: mrp,
+    priceFormatted: mrp > 0 ? `৳ ${mrp.toLocaleString('en-IN')}` : '',
     originalItem: rawVar
   };
 }
 
 /**
- * Group raw products according to Rules A, B, and C.
+ * Group raw products into e-commerce product cards.
  * 
  * @param {Array} rawProducts - Flat array of all product entries
  * @param {string} [categoryId] - Optional category filter
- * @returns {Array} Array of grouped product cards
+ * @returns {Array} Array of grouped product cards with MRP pricing
  */
 export function groupProducts(rawProducts, categoryId = null) {
   const filtered = categoryId
@@ -97,34 +84,20 @@ export function groupProducts(rawProducts, categoryId = null) {
 
   const groupsMap = new Map();
 
-  filtered.forEach((item, index) => {
+  filtered.forEach((item) => {
     // Unique key: category + image + family
     const imageKey = item.image ? item.image.trim() : 'no-image';
     const familyKey = (item.family || item.name || 'product').trim().toLowerCase();
     const groupKey = `${item.categoryId}::${imageKey}::${familyKey}`;
 
     if (!groupsMap.has(groupKey)) {
-      // Clean display name and model
       let displayName = item.name;
       let model = item.model || '';
 
-      if (item.categoryId === 'bearing') {
-        if (/2rs/i.test(item.family) || /2rs/i.test(item.name)) {
-          displayName = 'ACI 2RS Bearing';
-          model = '2RS';
-        } else if (/ball/i.test(item.family) || /ball/i.test(item.name)) {
-          displayName = 'ACI Ball Bearing';
-          model = 'Ball';
-        } else if (/roller/i.test(item.family) || /roller/i.test(item.name)) {
-          displayName = 'ACI Roller Bearing';
-          model = 'Roller';
-        } else {
-          displayName = 'ACI Bearing';
-        }
-      } else if (item.family === 'Pipe Wrench') {
+      if (item.family === 'Pipe Wrench') {
         displayName = 'ACI Heavy Duty Pipe Wrench';
       } else if (item.family === 'Screwdriver') {
-        displayName = 'ACI Screwdriver';
+        displayName = 'ACI Screwdriver Series';
       } else if (item.family === 'Pliers') {
         displayName = 'ACI High Leverage Pliers';
       } else if (item.family === 'Ball Pein Hammer') {
@@ -134,7 +107,7 @@ export function groupProducts(rawProducts, categoryId = null) {
       } else if (item.family === 'Drill Machine') {
         displayName = 'ACI Smart Drill Machine';
       } else if (item.family === 'Air Compressor') {
-        displayName = 'ACI Air Compressor';
+        displayName = 'ACI Industrial Air Compressor';
       } else if (item.family === 'Concrete Vibrator Motor') {
         displayName = 'ACI Smart Concrete Vibrator Motor';
       } else if (item.family === 'Concrete Vibrator Nozzle') {
@@ -157,6 +130,7 @@ export function groupProducts(rawProducts, categoryId = null) {
         family: item.family || item.name,
         image: item.image,
         code: item.code || null,
+        spec: item.spec || null,
         originalUrl: item.originalUrl || '',
         variations: [],
         rawItems: []
@@ -179,7 +153,7 @@ export function groupProducts(rawProducts, categoryId = null) {
     }
   });
 
-  // Post-process groups: compute headings and flags
+  // Post-process groups: compute MRP pricing display and flags
   return Array.from(groupsMap.values()).map((group) => {
     const variationHeading = getVariationHeading(group.variations, group.family);
     const hasMeaningfulVariations =
@@ -188,8 +162,26 @@ export function groupProducts(rawProducts, categoryId = null) {
         group.variations[0].label &&
         group.variations[0].label.toLowerCase() !== group.name.toLowerCase());
 
+    // Compute price range across all variations
+    const prices = group.variations.map((v) => v.mrp).filter((p) => p > 0);
+    const minMrp = prices.length > 0 ? Math.min(...prices) : (Number(group.rawItems[0]?.mrp) || 0);
+    const maxMrp = prices.length > 0 ? Math.max(...prices) : minMrp;
+
+    let priceDisplay = '';
+    if (minMrp > 0) {
+      if (minMrp === maxMrp) {
+        priceDisplay = `৳ ${minMrp.toLocaleString('en-IN')}`;
+      } else {
+        priceDisplay = `৳ ${minMrp.toLocaleString('en-IN')} – ৳ ${maxMrp.toLocaleString('en-IN')}`;
+      }
+    }
+
     return {
       ...group,
+      mrp: minMrp,
+      minMrp,
+      maxMrp,
+      priceDisplay,
       variationHeading,
       hasVariations: hasMeaningfulVariations,
       variationCount: group.variations.length
@@ -199,10 +191,6 @@ export function groupProducts(rawProducts, categoryId = null) {
 
 /**
  * Builds the complete list of categories populated with their grouped product cards.
- * 
- * @param {Array} categoriesList
- * @param {Array} allRawProducts
- * @returns {Array} Categories with .products holding grouped cards
  */
 export function getCategoriesWithGroupedProducts(categoriesList, allRawProducts) {
   return categoriesList.map((category) => {

@@ -6,11 +6,13 @@ const INITIAL_COUNT = 3;
 
 /**
  * CategorySection Component
- * 
- * - Clean category title only (no number badge, no subtitle or description)
- * - Main container: max-w-[1320px] mx-auto
+ *
+ * Requirements:
+ * - Center-aligned category heading (title only, no badges or subtitles)
+ * - Container: max-w-[1320px] mx-auto
+ * - Clean e-commerce product section listing
  * - Initially renders first 3 grouped cards
- * - Independent See More / Show Less toggle per category section
+ * - Independent See More / Show Less toggle per category
  * - Hidden See More button if category contains <= 3 grouped cards
  */
 export default function CategorySection({ category }) {
@@ -29,10 +31,10 @@ export default function CategorySection({ category }) {
   return (
     <section
       id={category.id}
-      className="w-full max-w-[1320px] mx-auto flex flex-col items-center border-b border-gray-200/70 pb-10 sm:pb-14 last:border-b-0"
+      className="w-full max-w-[1320px] mx-auto flex flex-col items-center border-b border-gray-200/70 pb-12 sm:pb-16 last:border-b-0 scroll-mt-20"
       aria-labelledby={`heading-${category.id}`}
     >
-      {/* ── Center-Aligned Category Title Only ── */}
+      {/* ── Center-Aligned Category Title ── */}
       <div className="mb-6 sm:mb-8 text-center flex flex-col items-center justify-center">
         <h2
           id={`heading-${category.id}`}
@@ -42,12 +44,12 @@ export default function CategorySection({ category }) {
         </h2>
       </div>
 
-      {/* ── Centered Product Grid ── */}
-      <div className="w-full flex justify-center">
+      {/* ── Responsive Product Grid ── */}
+      <div className="w-full">
         <ProductGrid products={visibleProducts} />
       </div>
 
-      {/* ── See More / Show Less Button (Independent per category) ── */}
+      {/* ── See More / Show Less Button ── */}
       {hasMore && (
         <div className="w-full flex justify-center items-center mt-8 sm:mt-10">
           <SeeMoreButton
