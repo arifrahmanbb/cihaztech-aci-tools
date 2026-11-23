@@ -13,7 +13,7 @@ const PHONE_NUMBER = '01350902312';
  * ProductCard Component – Premium E-Commerce Style
  * 
  * Features:
- * - Clean "Price" label (no MRP)
+ * - Prominent product price without any MRP label
  * - Modern e-commerce card elevation, rounded corners & subtle hover effects
  * - In-Stock pill badge and Option count badge
  * - Structured variation list with individual option prices
@@ -89,13 +89,10 @@ export default function ProductCard({ product }) {
             </p>
           )}
 
-          {/* ── Clean Price Section (NO MRP) ── */}
+          {/* ── Price Section (MRP text label removed; price prominently displayed) ── */}
           {priceDisplay && (
-            <div className="mt-3 pt-2.5 border-t border-gray-100 flex items-baseline justify-between gap-2">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400">
-                Price:
-              </span>
-              <span className="text-base sm:text-lg font-black text-[#c8102e] font-sans tracking-tight">
+            <div className="mt-3 pt-2.5 border-t border-gray-100 flex items-center">
+              <span className="text-base sm:text-lg md:text-xl font-black text-[#c8102e] font-sans tracking-tight">
                 {priceDisplay}
               </span>
             </div>
