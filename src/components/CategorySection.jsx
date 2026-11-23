@@ -2,7 +2,8 @@ import { useState, useCallback } from 'react';
 import ProductGrid from './ProductGrid.jsx';
 import SeeMoreButton from './SeeMoreButton.jsx';
 
-const INITIAL_COUNT = 3;
+// Show 4 items initially to fill an entire 4-column desktop row
+const INITIAL_COUNT = 4;
 
 /**
  * CategorySection Component
@@ -11,9 +12,9 @@ const INITIAL_COUNT = 3;
  * - Center-aligned category heading (title only, no badges or subtitles)
  * - Container: max-w-[1320px] mx-auto
  * - Clean e-commerce product section listing
- * - Initially renders first 3 grouped cards
+ * - Initially renders first 4 grouped cards (matching 4 per row on desktop)
  * - Independent See More / Show Less toggle per category
- * - Hidden See More button if category contains <= 3 grouped cards
+ * - Hidden See More button if category contains <= 4 grouped cards
  */
 export default function CategorySection({ category }) {
   const [expanded, setExpanded] = useState(false);
