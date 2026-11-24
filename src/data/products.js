@@ -2,6 +2,7 @@
  * ACI Motors Product Data
  * Auto-generated & audited with authentic MRP pricing and distinct visual tool groupings.
  * All 9 active categories included (including 3 distinct Bearing cards: 2RS, Ball, Roller).
+ * Verified strictly against official dealer price chart: exactly 66 authentic bearings (39 2RS, 12 Ball, 15 Roller).
  */
 
 export const products = [
@@ -1491,18 +1492,6 @@ export const products = [
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
     "model": "2RS",
-    "spec": "6201-2RS-RED",
-    "code": "J232",
-    "image": "/images/bearing-2rs.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
-    "mrp": 50
-  },
-  {
-    "id": "br-3",
-    "categoryId": "bearing",
-    "name": "ACI Bearing (2RS)",
-    "family": "2RS Bearing",
-    "model": "2RS",
     "spec": "6202-2RS",
     "code": "J001",
     "image": "/images/bearing-2rs.jpg",
@@ -1510,7 +1499,7 @@ export const products = [
     "mrp": 51
   },
   {
-    "id": "br-4",
+    "id": "br-3",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1522,19 +1511,7 @@ export const products = [
     "mrp": 64
   },
   {
-    "id": "br-5",
-    "categoryId": "bearing",
-    "name": "ACI Bearing (2RS)",
-    "family": "2RS Bearing",
-    "model": "2RS",
-    "spec": "6203-2RS-RED",
-    "code": "J233",
-    "image": "/images/bearing-2rs.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
-    "mrp": 64
-  },
-  {
-    "id": "br-6",
+    "id": "br-4",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1546,19 +1523,7 @@ export const products = [
     "mrp": 81
   },
   {
-    "id": "br-7",
-    "categoryId": "bearing",
-    "name": "ACI Bearing (2RS)",
-    "family": "2RS Bearing",
-    "model": "2RS",
-    "spec": "6204-2RS-RED",
-    "code": "J234",
-    "image": "/images/bearing-2rs.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
-    "mrp": 81
-  },
-  {
-    "id": "br-8",
+    "id": "br-5",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1570,19 +1535,7 @@ export const products = [
     "mrp": 100
   },
   {
-    "id": "br-9",
-    "categoryId": "bearing",
-    "name": "ACI Bearing (2RS)",
-    "family": "2RS Bearing",
-    "model": "2RS",
-    "spec": "6205-2RS-RED",
-    "code": "J235",
-    "image": "/images/bearing-2rs.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
-    "mrp": 100
-  },
-  {
-    "id": "br-10",
+    "id": "br-6",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1594,19 +1547,7 @@ export const products = [
     "mrp": 147
   },
   {
-    "id": "br-11",
-    "categoryId": "bearing",
-    "name": "ACI Bearing (2RS)",
-    "family": "2RS Bearing",
-    "model": "2RS",
-    "spec": "6206-2RS-RED",
-    "code": "J236",
-    "image": "/images/bearing-2rs.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
-    "mrp": 147
-  },
-  {
-    "id": "br-12",
+    "id": "br-7",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1618,7 +1559,7 @@ export const products = [
     "mrp": 191
   },
   {
-    "id": "br-13",
+    "id": "br-8",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1630,7 +1571,7 @@ export const products = [
     "mrp": 238
   },
   {
-    "id": "br-14",
+    "id": "br-9",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1642,7 +1583,7 @@ export const products = [
     "mrp": 267
   },
   {
-    "id": "br-15",
+    "id": "br-10",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1654,7 +1595,7 @@ export const products = [
     "mrp": 297
   },
   {
-    "id": "br-16",
+    "id": "br-11",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1666,7 +1607,7 @@ export const products = [
     "mrp": 377
   },
   {
-    "id": "br-17",
+    "id": "br-12",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1678,7 +1619,7 @@ export const products = [
     "mrp": 75
   },
   {
-    "id": "br-18",
+    "id": "br-13",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1690,19 +1631,7 @@ export const products = [
     "mrp": 77
   },
   {
-    "id": "br-19",
-    "categoryId": "bearing",
-    "name": "ACI Bearing (2RS)",
-    "family": "2RS Bearing",
-    "model": "2RS",
-    "spec": "6302-2RS-RED",
-    "code": "J237",
-    "image": "/images/bearing-2rs.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
-    "mrp": 75
-  },
-  {
-    "id": "br-20",
+    "id": "br-14",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1714,7 +1643,7 @@ export const products = [
     "mrp": 104
   },
   {
-    "id": "br-21",
+    "id": "br-15",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1726,19 +1655,7 @@ export const products = [
     "mrp": 115
   },
   {
-    "id": "br-22",
-    "categoryId": "bearing",
-    "name": "ACI Bearing (2RS)",
-    "family": "2RS Bearing",
-    "model": "2RS",
-    "spec": "6304-2RS-RED",
-    "code": "J238",
-    "image": "/images/bearing-2rs.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
-    "mrp": 105
-  },
-  {
-    "id": "br-23",
+    "id": "br-16",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1750,7 +1667,7 @@ export const products = [
     "mrp": 154
   },
   {
-    "id": "br-24",
+    "id": "br-17",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1762,7 +1679,7 @@ export const products = [
     "mrp": 227
   },
   {
-    "id": "br-25",
+    "id": "br-18",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1774,7 +1691,7 @@ export const products = [
     "mrp": 291
   },
   {
-    "id": "br-26",
+    "id": "br-19",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1786,7 +1703,7 @@ export const products = [
     "mrp": 398
   },
   {
-    "id": "br-27",
+    "id": "br-20",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1798,7 +1715,7 @@ export const products = [
     "mrp": 38
   },
   {
-    "id": "br-28",
+    "id": "br-21",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1810,19 +1727,7 @@ export const products = [
     "mrp": 40
   },
   {
-    "id": "br-29",
-    "categoryId": "bearing",
-    "name": "ACI Bearing (2RS)",
-    "family": "2RS Bearing",
-    "model": "2RS",
-    "spec": "6001-2RS-RED",
-    "code": "J239",
-    "image": "/images/bearing-2rs.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
-    "mrp": 40
-  },
-  {
-    "id": "br-30",
+    "id": "br-22",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1834,7 +1739,7 @@ export const products = [
     "mrp": 53
   },
   {
-    "id": "br-31",
+    "id": "br-23",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1846,7 +1751,7 @@ export const products = [
     "mrp": 55
   },
   {
-    "id": "br-32",
+    "id": "br-24",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1858,43 +1763,7 @@ export const products = [
     "mrp": 67
   },
   {
-    "id": "br-33",
-    "categoryId": "bearing",
-    "name": "ACI Bearing (2RS)",
-    "family": "2RS Bearing",
-    "model": "2RS",
-    "spec": "6004-2RS-RED",
-    "code": "J240",
-    "image": "/images/bearing-2rs.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
-    "mrp": 67
-  },
-  {
-    "id": "br-34",
-    "categoryId": "bearing",
-    "name": "ACI Bearing (2RS)",
-    "family": "2RS Bearing",
-    "model": "2RS",
-    "spec": "6005-2RS",
-    "code": "J024",
-    "image": "/images/bearing-2rs.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
-    "mrp": 85
-  },
-  {
-    "id": "br-35",
-    "categoryId": "bearing",
-    "name": "ACI Bearing (2RS)",
-    "family": "2RS Bearing",
-    "model": "2RS",
-    "spec": "6005-2RS-RED",
-    "code": "J241",
-    "image": "/images/bearing-2rs.jpg",
-    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
-    "mrp": 85
-  },
-  {
-    "id": "br-36",
+    "id": "br-25",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1906,7 +1775,7 @@ export const products = [
     "mrp": 465
   },
   {
-    "id": "br-37",
+    "id": "br-26",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1918,7 +1787,7 @@ export const products = [
     "mrp": 691
   },
   {
-    "id": "br-38",
+    "id": "br-27",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1930,7 +1799,7 @@ export const products = [
     "mrp": 499
   },
   {
-    "id": "br-39",
+    "id": "br-28",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1942,7 +1811,7 @@ export const products = [
     "mrp": 592
   },
   {
-    "id": "br-40",
+    "id": "br-29",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1954,7 +1823,7 @@ export const products = [
     "mrp": 737
   },
   {
-    "id": "br-41",
+    "id": "br-30",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1966,7 +1835,7 @@ export const products = [
     "mrp": 895
   },
   {
-    "id": "br-42",
+    "id": "br-31",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1978,7 +1847,7 @@ export const products = [
     "mrp": 1081
   },
   {
-    "id": "br-43",
+    "id": "br-32",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -1990,7 +1859,7 @@ export const products = [
     "mrp": 28
   },
   {
-    "id": "br-44",
+    "id": "br-33",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -2002,7 +1871,7 @@ export const products = [
     "mrp": 29
   },
   {
-    "id": "br-45",
+    "id": "br-34",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -2014,7 +1883,7 @@ export const products = [
     "mrp": 34
   },
   {
-    "id": "br-46",
+    "id": "br-35",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -2026,7 +1895,7 @@ export const products = [
     "mrp": 34
   },
   {
-    "id": "br-47",
+    "id": "br-36",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -2038,7 +1907,7 @@ export const products = [
     "mrp": 37
   },
   {
-    "id": "br-48",
+    "id": "br-37",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -2050,7 +1919,7 @@ export const products = [
     "mrp": 39
   },
   {
-    "id": "br-49",
+    "id": "br-38",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -2062,7 +1931,7 @@ export const products = [
     "mrp": 101
   },
   {
-    "id": "br-50",
+    "id": "br-39",
     "categoryId": "bearing",
     "name": "ACI Bearing (2RS)",
     "family": "2RS Bearing",
@@ -2074,7 +1943,7 @@ export const products = [
     "mrp": 54
   },
   {
-    "id": "br-51",
+    "id": "br-40",
     "categoryId": "bearing",
     "name": "ACI Bearing (Ball)",
     "family": "Ball Bearing",
@@ -2086,7 +1955,7 @@ export const products = [
     "mrp": 277
   },
   {
-    "id": "br-52",
+    "id": "br-41",
     "categoryId": "bearing",
     "name": "ACI Bearing (Ball)",
     "family": "Ball Bearing",
@@ -2098,7 +1967,7 @@ export const products = [
     "mrp": 505
   },
   {
-    "id": "br-53",
+    "id": "br-42",
     "categoryId": "bearing",
     "name": "ACI Bearing (Ball)",
     "family": "Ball Bearing",
@@ -2110,7 +1979,7 @@ export const products = [
     "mrp": 82
   },
   {
-    "id": "br-54",
+    "id": "br-43",
     "categoryId": "bearing",
     "name": "ACI Bearing (Ball)",
     "family": "Ball Bearing",
@@ -2122,7 +1991,7 @@ export const products = [
     "mrp": 91
   },
   {
-    "id": "br-55",
+    "id": "br-44",
     "categoryId": "bearing",
     "name": "ACI Bearing (Ball)",
     "family": "Ball Bearing",
@@ -2134,7 +2003,7 @@ export const products = [
     "mrp": 127
   },
   {
-    "id": "br-56",
+    "id": "br-45",
     "categoryId": "bearing",
     "name": "ACI Bearing (Ball)",
     "family": "Ball Bearing",
@@ -2146,7 +2015,7 @@ export const products = [
     "mrp": 175
   },
   {
-    "id": "br-57",
+    "id": "br-46",
     "categoryId": "bearing",
     "name": "ACI Bearing (Ball)",
     "family": "Ball Bearing",
@@ -2158,7 +2027,7 @@ export const products = [
     "mrp": 217
   },
   {
-    "id": "br-58",
+    "id": "br-47",
     "categoryId": "bearing",
     "name": "ACI Bearing (Ball)",
     "family": "Ball Bearing",
@@ -2170,7 +2039,7 @@ export const products = [
     "mrp": 108
   },
   {
-    "id": "br-59",
+    "id": "br-48",
     "categoryId": "bearing",
     "name": "ACI Bearing (Ball)",
     "family": "Ball Bearing",
@@ -2182,7 +2051,7 @@ export const products = [
     "mrp": 138
   },
   {
-    "id": "br-60",
+    "id": "br-49",
     "categoryId": "bearing",
     "name": "ACI Bearing (Ball)",
     "family": "Ball Bearing",
@@ -2194,7 +2063,7 @@ export const products = [
     "mrp": 210
   },
   {
-    "id": "br-61",
+    "id": "br-50",
     "categoryId": "bearing",
     "name": "ACI Bearing (Ball)",
     "family": "Ball Bearing",
@@ -2206,7 +2075,7 @@ export const products = [
     "mrp": 276
   },
   {
-    "id": "br-62",
+    "id": "br-51",
     "categoryId": "bearing",
     "name": "ACI Bearing (Ball)",
     "family": "Ball Bearing",
@@ -2218,7 +2087,7 @@ export const products = [
     "mrp": 25
   },
   {
-    "id": "br-63",
+    "id": "br-52",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2230,7 +2099,7 @@ export const products = [
     "mrp": 132
   },
   {
-    "id": "br-64",
+    "id": "br-53",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2242,7 +2111,7 @@ export const products = [
     "mrp": 145
   },
   {
-    "id": "br-65",
+    "id": "br-54",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2254,7 +2123,7 @@ export const products = [
     "mrp": 267
   },
   {
-    "id": "br-66",
+    "id": "br-55",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2266,7 +2135,7 @@ export const products = [
     "mrp": 314
   },
   {
-    "id": "br-67",
+    "id": "br-56",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2278,7 +2147,7 @@ export const products = [
     "mrp": 357
   },
   {
-    "id": "br-68",
+    "id": "br-57",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2290,7 +2159,7 @@ export const products = [
     "mrp": 138
   },
   {
-    "id": "br-69",
+    "id": "br-58",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2302,7 +2171,7 @@ export const products = [
     "mrp": 144
   },
   {
-    "id": "br-70",
+    "id": "br-59",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2314,7 +2183,7 @@ export const products = [
     "mrp": 227
   },
   {
-    "id": "br-71",
+    "id": "br-60",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2326,7 +2195,7 @@ export const products = [
     "mrp": 263
   },
   {
-    "id": "br-72",
+    "id": "br-61",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2338,7 +2207,7 @@ export const products = [
     "mrp": 323
   },
   {
-    "id": "br-73",
+    "id": "br-62",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2350,7 +2219,7 @@ export const products = [
     "mrp": 353
   },
   {
-    "id": "br-74",
+    "id": "br-63",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2362,7 +2231,7 @@ export const products = [
     "mrp": 347
   },
   {
-    "id": "br-75",
+    "id": "br-64",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2374,7 +2243,7 @@ export const products = [
     "mrp": 912
   },
   {
-    "id": "br-76",
+    "id": "br-65",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
@@ -2386,7 +2255,7 @@ export const products = [
     "mrp": 1167
   },
   {
-    "id": "br-77",
+    "id": "br-66",
     "categoryId": "bearing",
     "name": "ACI Bearing (Roller)",
     "family": "Roller Bearing",
