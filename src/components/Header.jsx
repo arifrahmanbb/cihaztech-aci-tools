@@ -80,7 +80,7 @@ export default function Header({ categories = [] }) {
   return (
     <>
       <header
-        className="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-xs"
+        className="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-[0_1px_3px_rgba(15,23,42,0.04)]"
         style={{ height: 'var(--header-height, 64px)' }}
       >
         <div className="max-w-[1320px] mx-auto h-full flex items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -89,7 +89,7 @@ export default function Header({ categories = [] }) {
             <button
               type="button"
               onClick={() => setDrawerOpen(true)}
-              className="p-2 -ml-2 rounded-xl text-gray-800 hover:text-[#c8102e] hover:bg-gray-100 active:bg-gray-200 transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c8102e]"
+              className="p-2.5 -ml-2 rounded-xl text-slate-800 hover:text-[#c8102e] hover:bg-slate-100 active:bg-slate-200 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c8102e]"
               aria-label="Open category navigation menu"
               aria-expanded={drawerOpen}
             >
@@ -98,15 +98,15 @@ export default function Header({ categories = [] }) {
           </div>
 
           {/* ── Right Side: Phone, Social Media Icons, WhatsApp ── */}
-          <div className="flex items-center gap-1.5 sm:gap-2.5">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             {/* Phone Icon */}
             <a
               href={`tel:${PHONE_NUMBER}`}
-              className="p-2 rounded-full text-gray-700 hover:text-[#c8102e] hover:bg-red-50 transition-colors"
+              className="p-2 sm:p-2.5 rounded-full text-slate-700 hover:text-[#c8102e] hover:bg-red-50/80 transition-all"
               title={`Call Helpline: ${PHONE_NUMBER}`}
               aria-label={`Call Helpline ${PHONE_NUMBER}`}
             >
-              <Phone size={19} />
+              <Phone size={19} strokeWidth={2} />
             </a>
 
             {/* Facebook Icon */}
@@ -114,7 +114,7 @@ export default function Header({ categories = [] }) {
               href={FACEBOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full text-gray-700 hover:text-[#1877F2] hover:bg-blue-50 transition-colors"
+              className="p-2 sm:p-2.5 rounded-full text-slate-700 hover:text-[#1877F2] hover:bg-blue-50/80 transition-all"
               title="ACI Motors Facebook"
               aria-label="ACI Motors on Facebook"
             >
@@ -132,12 +132,12 @@ export default function Header({ categories = [] }) {
               href={YOUTUBE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full text-gray-700 hover:text-[#FF0000] hover:bg-red-50 transition-colors"
+              className="p-2 sm:p-2.5 rounded-full text-slate-700 hover:text-[#FF0000] hover:bg-red-50/80 transition-all"
               title="ACI Motors YouTube"
               aria-label="ACI Motors on YouTube"
             >
               <svg
-                className="w-5 h-5 fill-current"
+                className="w-4.5 h-4.5 fill-current"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
               >
@@ -150,7 +150,7 @@ export default function Header({ categories = [] }) {
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full text-emerald-600 hover:text-white hover:bg-emerald-600 bg-emerald-50 transition-all duration-200"
+              className="p-2 sm:p-2.5 rounded-full text-emerald-600 hover:text-white hover:bg-emerald-600 bg-emerald-50/80 transition-all duration-200 shadow-2xs"
               title={`WhatsApp Order Helpline: ${WHATSAPP_NUMBER}`}
               aria-label="Order via WhatsApp"
             >
@@ -172,7 +172,7 @@ export default function Header({ categories = [] }) {
       {/* ── Drawer Overlay ── */}
       {drawerOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/45 backdrop-blur-xs transition-opacity duration-300"
+          className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs transition-opacity duration-300"
           aria-hidden="true"
           onClick={() => setDrawerOpen(false)}
         />
@@ -181,7 +181,7 @@ export default function Header({ categories = [] }) {
       {/* ── Slide-over Navigation Drawer (Opens from Left) ── */}
       <aside
         ref={drawerRef}
-        className={`fixed top-0 left-0 bottom-0 z-50 w-80 max-w-[85vw] bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 bottom-0 z-50 w-80 max-w-[85vw] bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-out ${
           drawerOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         role="dialog"
@@ -189,7 +189,7 @@ export default function Header({ categories = [] }) {
         aria-label="Category Navigation"
       >
         {/* Drawer Header */}
-        <div className="flex items-center justify-between p-4 sm:p-5 border-b border-gray-100">
+        <div className="flex items-center justify-between p-4 sm:p-5 border-b border-slate-100 bg-slate-50/50">
           <div className="flex items-center gap-2.5">
             <img
               src="https://acimotors-bd.com/assets/images/acimotors-logo.svg"
@@ -199,14 +199,14 @@ export default function Header({ categories = [] }) {
                 e.currentTarget.style.display = 'none';
               }}
             />
-            <span className="font-extrabold text-base text-gray-900 tracking-tight">
+            <span className="font-extrabold text-base text-slate-900 tracking-tight">
               Categories
             </span>
           </div>
           <button
             type="button"
             onClick={() => setDrawerOpen(false)}
-            className="p-1.5 text-gray-500 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
+            className="p-1.5 text-slate-500 hover:text-slate-900 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer"
             aria-label="Close menu"
           >
             <X size={20} />
@@ -227,18 +227,18 @@ export default function Header({ categories = [] }) {
                 className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl text-left text-sm font-semibold transition-all duration-150 cursor-pointer ${
                   isActive
                     ? 'bg-red-50 text-[#c8102e] border border-red-100 shadow-2xs'
-                    : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                    : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900'
                 }`}
               >
                 <div className="flex items-center gap-2.5 truncate">
                   <span
                     className={`w-1.5 h-1.5 rounded-full shrink-0 ${
-                      isActive ? 'bg-[#c8102e]' : 'bg-gray-300'
+                      isActive ? 'bg-[#c8102e]' : 'bg-slate-300'
                     }`}
                   />
                   <span className="truncate">{cat.name}</span>
                 </div>
-                <span className="text-xs text-gray-400 font-mono shrink-0">
+                <span className="text-xs text-slate-400 font-mono shrink-0">
                   {count > 0 ? `${count} items` : String(idx + 1).padStart(2, '0')}
                 </span>
               </button>
@@ -247,18 +247,18 @@ export default function Header({ categories = [] }) {
         </nav>
 
         {/* Drawer Footer with Quick Actions */}
-        <div className="p-4 border-t border-gray-100 bg-gray-50/60 space-y-2">
+        <div className="p-4 border-t border-slate-100 bg-slate-50/70 space-y-2">
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2.5 px-3 rounded-lg transition-colors"
+            className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2.5 px-3 rounded-xl transition-all shadow-xs"
           >
             <span>Order via WhatsApp</span>
           </a>
           <a
             href={`tel:${PHONE_NUMBER}`}
-            className="w-full flex items-center justify-center gap-2 text-gray-700 hover:text-[#c8102e] bg-white border border-gray-200 font-medium text-xs py-2 px-3 rounded-lg transition-colors"
+            className="w-full flex items-center justify-center gap-2 text-slate-700 hover:text-[#c8102e] bg-white border border-slate-200 font-semibold text-xs py-2 px-3 rounded-xl transition-all"
           >
             <Phone size={14} />
             <span>Call Helpline: {PHONE_NUMBER}</span>

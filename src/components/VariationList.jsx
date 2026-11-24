@@ -5,7 +5,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
  * VariationList Component
  * 
  * Displays available product variations (sizes, weights, models, specifications)
- * along with their verified individual MRP prices in a clean, vertical bulleted list.
+ * along with their verified individual prices in a sleek, modern e-commerce option box.
  */
 export default function VariationList({
   variations = [],
@@ -21,21 +21,22 @@ export default function VariationList({
   const remainingCount = variations.length - initialLimit;
 
   return (
-    <div className="mt-2.5 pt-2.5 border-t border-gray-100 flex flex-col">
-      {/* ── Section Heading ── */}
-      <div className="flex items-center justify-between mb-1.5">
-        <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500">
-          {heading}:
+    <div className="mt-3 bg-slate-50/90 rounded-xl p-2.5 sm:p-3 border border-slate-200/70">
+      {/* ── Section Header ── */}
+      <div className="flex items-center justify-between pb-1.5 mb-2 border-b border-slate-200/60">
+        <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-600 flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#c8102e]" />
+          {heading}
         </span>
-        <span className="text-[10px] text-gray-400 font-mono font-medium">
-          {variations.length} {variations.length === 1 ? 'option' : 'options'}
+        <span className="text-[10px] font-semibold text-slate-500 bg-white border border-slate-200 px-1.5 py-0.5 rounded-md font-mono">
+          {variations.length} {variations.length === 1 ? 'item' : 'items'}
         </span>
       </div>
 
-      {/* ── Vertical Bullet List Format with MRP Pricing ── */}
+      {/* ── Option Items List (Clean Card Row Style) ── */}
       <ul
         className={`flex flex-col space-y-1.5 ${
-          expanded && variations.length > 7 ? 'max-h-52 overflow-y-auto pr-1' : ''
+          expanded && variations.length > 6 ? 'max-h-56 overflow-y-auto pr-1' : ''
         }`}
         role="list"
       >
@@ -48,24 +49,21 @@ export default function VariationList({
           return (
             <li
               key={item.id || idx}
-              className="flex items-center justify-between text-xs text-gray-800 py-0.5 gap-2"
+              className="flex items-center justify-between text-xs bg-white border border-slate-200/60 rounded-lg px-2.5 py-1.5 shadow-2xs gap-2"
             >
-              <div className="flex items-center truncate min-w-0">
-                <span className="text-[#c8102e] mr-1.5 text-sm leading-none select-none shrink-0">
-                  •
-                </span>
-                <span className="truncate font-medium text-gray-700 hover:text-gray-900" title={label}>
+              <div className="flex items-center gap-1.5 truncate min-w-0">
+                <span className="truncate font-medium text-slate-800" title={label}>
                   {label}
                 </span>
                 {showCode && (
-                  <span className="ml-1 text-[10px] text-gray-400 font-mono shrink-0">
+                  <span className="text-[10px] text-slate-400 font-mono shrink-0">
                     ({code})
                   </span>
                 )}
               </div>
 
               {price && (
-                <span className="shrink-0 text-xs font-bold text-gray-900 font-mono">
+                <span className="shrink-0 text-xs font-bold text-slate-900 font-sans">
                   {price}
                 </span>
               )}
@@ -79,7 +77,7 @@ export default function VariationList({
         <button
           type="button"
           onClick={() => setExpanded((prev) => !prev)}
-          className="mt-2 self-start inline-flex items-center gap-1 text-[11px] font-bold text-[#c8102e] hover:text-[#91081c] hover:underline cursor-pointer focus:outline-none rounded px-1 py-0.5 transition-colors"
+          className="mt-2 w-full py-1.5 text-center inline-flex items-center justify-center gap-1 text-[11px] font-bold text-[#c8102e] hover:text-[#91081c] bg-white hover:bg-red-50 border border-slate-200/80 hover:border-red-200 rounded-lg transition-colors cursor-pointer"
           aria-expanded={expanded}
         >
           {expanded ? (

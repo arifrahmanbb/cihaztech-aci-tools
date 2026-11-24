@@ -9,7 +9,7 @@ const INITIAL_COUNT = 4;
  * CategorySection Component
  *
  * Requirements:
- * - Center-aligned category heading (title only, no badges or subtitles)
+ * - Center-aligned category heading with subtle brand accent
  * - Container: max-w-[1320px] mx-auto
  * - Clean e-commerce product section listing
  * - Initially renders first 4 grouped cards (matching 4 per row on desktop)
@@ -32,17 +32,18 @@ export default function CategorySection({ category }) {
   return (
     <section
       id={category.id}
-      className="w-full max-w-[1320px] mx-auto flex flex-col items-center border-b border-gray-200/70 pb-12 sm:pb-16 last:border-b-0 scroll-mt-20"
+      className="w-full max-w-[1320px] mx-auto flex flex-col items-center scroll-mt-24"
       aria-labelledby={`heading-${category.id}`}
     >
       {/* ── Center-Aligned Category Title ── */}
-      <div className="mb-6 sm:mb-8 text-center flex flex-col items-center justify-center">
+      <div className="mb-8 sm:mb-10 text-center flex flex-col items-center justify-center">
         <h2
           id={`heading-${category.id}`}
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight"
+          className="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-slate-900 tracking-tight leading-tight"
         >
           {category.name}
         </h2>
+        <div className="w-12 h-1 bg-[#c8102e] rounded-full mt-3" aria-hidden="true" />
       </div>
 
       {/* ── Responsive Product Grid ── */}
@@ -52,7 +53,7 @@ export default function CategorySection({ category }) {
 
       {/* ── See More / Show Less Button ── */}
       {hasMore && (
-        <div className="w-full flex justify-center items-center mt-8 sm:mt-10">
+        <div className="w-full flex justify-center items-center mt-8 sm:mt-12">
           <SeeMoreButton
             expanded={expanded}
             onClick={toggle}
@@ -60,6 +61,12 @@ export default function CategorySection({ category }) {
           />
         </div>
       )}
+
+      {/* Subtle divider between categories */}
+      <div
+        className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent mt-12 sm:mt-16"
+        aria-hidden="true"
+      />
     </section>
   );
 }
