@@ -2225,7 +2225,7 @@ export const products = [
     "model": "Roller",
     "spec": "30204-Roller",
     "code": "J212",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 132
   },
@@ -2237,7 +2237,7 @@ export const products = [
     "model": "Roller",
     "spec": "30205-Roller",
     "code": "J213",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 145
   },
@@ -2249,7 +2249,7 @@ export const products = [
     "model": "Roller",
     "spec": "30207-Roller",
     "code": "J214",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 267
   },
@@ -2261,7 +2261,7 @@ export const products = [
     "model": "Roller",
     "spec": "30208-Roller",
     "code": "J215",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 314
   },
@@ -2273,7 +2273,7 @@ export const products = [
     "model": "Roller",
     "spec": "30209-Roller",
     "code": "J216",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 357
   },
@@ -2285,7 +2285,7 @@ export const products = [
     "model": "Roller",
     "spec": "32004-Roller",
     "code": "J217",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 138
   },
@@ -2297,7 +2297,7 @@ export const products = [
     "model": "Roller",
     "spec": "32005-Roller",
     "code": "J218",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 144
   },
@@ -2309,7 +2309,7 @@ export const products = [
     "model": "Roller",
     "spec": "32007-Roller",
     "code": "J219",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 227
   },
@@ -2321,7 +2321,7 @@ export const products = [
     "model": "Roller",
     "spec": "32206-Roller",
     "code": "J220",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 263
   },
@@ -2333,7 +2333,7 @@ export const products = [
     "model": "Roller",
     "spec": "32207-Roller",
     "code": "J221",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 323
   },
@@ -2345,7 +2345,7 @@ export const products = [
     "model": "Roller",
     "spec": "32208-Roller",
     "code": "J222",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 353
   },
@@ -2357,7 +2357,7 @@ export const products = [
     "model": "Roller",
     "spec": "30210-Roller",
     "code": "J223",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 347
   },
@@ -2369,7 +2369,7 @@ export const products = [
     "model": "Roller",
     "spec": "32213-Roller",
     "code": "J224",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 912
   },
@@ -2381,7 +2381,7 @@ export const products = [
     "model": "Roller",
     "spec": "32216-Roller",
     "code": "J225",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 1167
   },
@@ -2393,7 +2393,7 @@ export const products = [
     "model": "Roller",
     "spec": "48548/10-Roller",
     "code": "J226",
-    "image": "/images/bearing-roller.jpg",
+    "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 182
   }
