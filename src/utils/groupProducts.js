@@ -124,8 +124,32 @@ export function groupProducts(rawProducts, categoryId = null) {
         displayName = 'ACI Drop Forged Ball Pein Hammer';
       } else if (item.family === 'Angle Grinder') {
         displayName = 'ACI Smart Angle Grinder';
+      } else if (item.family === 'Rotary Hammer Drill') {
+        displayName = 'ACI Smart Rotary Hammer Drill';
+      } else if (item.family === 'Electric Drill') {
+        displayName = 'ACI Smart Electric Drill';
+      } else if (item.family === 'Impact Drill') {
+        displayName = 'ACI Smart Impact Drill';
       } else if (item.family === 'Drill Machine') {
         displayName = 'ACI Smart Drill Machine';
+      } else if (item.family === 'Cutting Machine') {
+        displayName = 'ACI Smart Cutting Machine';
+      } else if (item.family === 'Chain Saw (Electric)') {
+        displayName = 'ACI Smart Electric Chain Saw';
+      } else if (item.family === 'Welding Machine MMA 200') {
+        displayName = 'ACI Smart Welding Machine MMA 200 (IGBT)';
+      } else if (item.family === 'Welding Machine TIG/MMA 250') {
+        displayName = 'ACI Smart Welding Machine TIG/MMA 250';
+      } else if (item.family === 'Welding Machine MMA 200 XL') {
+        displayName = 'ACI Smart Welding Machine MMA 200 (IGBT) XL';
+      } else if (item.family === 'Kitchen Scale Flat') {
+        displayName = 'ACI Kitchen Scale Flat (0-5 KG)';
+      } else if (item.family === 'Kitchen Scale Grove') {
+        displayName = 'ACI Kitchen Scale Grove (0-5 KG)';
+      } else if (item.family === 'Weight Scale (Hook)') {
+        displayName = 'ACI Weight Scale Hook';
+      } else if (item.family === 'Hand Saw (Wood)') {
+        displayName = 'ACI Smart Hand Saw (Wood)';
       } else if (item.family === 'Air Compressor') {
         displayName = 'ACI Industrial Air Compressor';
       } else if (item.family === 'Concrete Vibrator Motor') {

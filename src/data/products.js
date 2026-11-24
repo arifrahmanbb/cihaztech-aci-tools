@@ -1,8 +1,7 @@
 /**
  * ACI Motors Product Data
- * Auto-generated & audited with authentic MRP pricing and distinct visual tool groupings.
- * All 9 active categories included (including 3 distinct Bearing cards: 2RS, Ball, Roller).
- * Verified strictly against official dealer price chart: exactly 66 authentic bearings (39 2RS, 12 Ball, 15 Roller).
+ * Complete audited product dataset with authentic MRP pricing, visual drill separations, and dedicated Welding Machines.
+ * All 10 active categories included.
  */
 
 export const products = [
@@ -42,44 +41,44 @@ export const products = [
   {
     "id": "pt-3",
     "categoryId": "power-tools",
-    "name": "ACI Smart Drill Machine",
-    "family": "Drill Machine",
+    "name": "ACI Smart Electric Drill",
+    "family": "Electric Drill",
     "code": "J031",
-    "spec": "Electric Drill",
-    "image": "https://acimotors-bd.com/assets/images/product/powert-tools/drill.png",
+    "spec": "450W",
+    "image": "/images/electric-drill.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/power-tools",
     "mrp": 2345
   },
   {
     "id": "pt-4",
     "categoryId": "power-tools",
-    "name": "ACI Smart Drill Machine",
-    "family": "Drill Machine",
+    "name": "ACI Smart Rotary Hammer Drill",
+    "family": "Rotary Hammer Drill",
     "code": "J032",
-    "spec": "Rotary Hammer Drill",
-    "image": "https://acimotors-bd.com/assets/images/product/powert-tools/drill.png",
+    "spec": "800W",
+    "image": "/images/rotary-hammer-drill.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/power-tools",
     "mrp": 5980
   },
   {
     "id": "pt-5",
     "categoryId": "power-tools",
-    "name": "ACI Smart Drill Machine",
-    "family": "Drill Machine",
+    "name": "ACI Smart Impact Drill",
+    "family": "Impact Drill",
     "code": "J033",
     "spec": "Impact Drill",
-    "image": "https://acimotors-bd.com/assets/images/product/powert-tools/drill.png",
+    "image": "/images/impact-drill.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/power-tools",
     "mrp": 2760
   },
   {
     "id": "pt-6",
     "categoryId": "power-tools",
-    "name": "ACI Smart Drill Machine",
-    "family": "Drill Machine",
+    "name": "ACI Smart Impact Drill",
+    "family": "Impact Drill",
     "code": "J034",
     "spec": "Impact Drill",
-    "image": "https://acimotors-bd.com/assets/images/product/powert-tools/drill.png",
+    "image": "/images/impact-drill.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/power-tools",
     "mrp": 3165
   },
@@ -184,23 +183,23 @@ export const products = [
   },
   {
     "id": "pt-16",
-    "categoryId": "power-tools",
-    "name": "ACI Smart Welding Machine",
+    "categoryId": "welding-machine",
+    "name": "ACI Smart Welding Machine MMA 200 (IGBT)",
     "family": "Welding Machine MMA 200",
     "code": "J256",
     "spec": "5.6 KVA",
-    "image": "https://acimotors-bd.com/assets/images/product/smart-tools/mma200.jpg",
+    "image": "/images/welding-mma-200.jpg",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/power-tools",
     "mrp": 7405
   },
   {
     "id": "pt-17",
-    "categoryId": "power-tools",
-    "name": "ACI Smart Welding Machine",
+    "categoryId": "welding-machine",
+    "name": "ACI Smart Welding Machine TIG/MMA 250",
     "family": "Welding Machine TIG/MMA 250",
     "code": "J257",
     "spec": "7 KVA",
-    "image": "https://acimotors-bd.com/assets/images/product/smart-tools/mma250.jpg",
+    "image": "/images/welding-mma-250.jpg",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/power-tools",
     "mrp": 11000
   },
@@ -2265,6 +2264,138 @@ export const products = [
     "image": "/images/bearing-roller.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 182
+  },
+  {
+    "id": "wm-3",
+    "categoryId": "welding-machine",
+    "name": "ACI Smart Welding Machine MMA 200 (IGBT) XL",
+    "family": "Welding Machine MMA 200 XL",
+    "code": "J286",
+    "spec": "MMA 200 XL",
+    "image": "/images/welding-mma-200.jpg",
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/power-tools",
+    "mrp": 8970
+  },
+  {
+    "id": "pt-cm-16",
+    "categoryId": "power-tools",
+    "name": "ACI Smart Cutting Machine (16 Inch)",
+    "family": "Cutting Machine",
+    "code": "J025",
+    "spec": "16 Inch",
+    "image": "https://acimotors-bd.com/assets/images/product/powert-tools/c-saw.jpg",
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/power-tools",
+    "mrp": 25275
+  },
+  {
+    "id": "pt-ag-1200",
+    "categoryId": "power-tools",
+    "name": "ACI Smart Angle Grinder",
+    "family": "Angle Grinder",
+    "code": "J260",
+    "spec": "4 Inch (1200W)",
+    "image": "https://acimotors-bd.com/assets/images/product/powert-tools/grinder.png",
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/power-tools",
+    "mrp": 3260
+  },
+  {
+    "id": "pt-cs-elec",
+    "categoryId": "power-tools",
+    "name": "ACI Smart Chain Saw (Electric)",
+    "family": "Chain Saw (Electric)",
+    "code": "J295",
+    "spec": "20 Inch",
+    "image": "https://acimotors-bd.com/assets/images/product/powert-tools/saw.png",
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/power-tools",
+    "mrp": 12940
+  },
+  {
+    "id": "ac-of-24l",
+    "categoryId": "aci-air-compressor",
+    "name": "ACI Industrial Air Compressor",
+    "family": "Air Compressor",
+    "code": "J038",
+    "spec": "1.00 HP (24L Oil Free)",
+    "image": "https://acimotors-bd.com/assets/images/compressor-models.jpg",
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/aci-air-compressor",
+    "mrp": 12920
+  },
+  {
+    "id": "ac-of-50l",
+    "categoryId": "aci-air-compressor",
+    "name": "ACI Industrial Air Compressor",
+    "family": "Air Compressor",
+    "code": "J277",
+    "spec": "1.00 HP (50L Oil Free)",
+    "image": "https://acimotors-bd.com/assets/images/compressor-models.jpg",
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/aci-air-compressor",
+    "mrp": 24325
+  },
+  {
+    "id": "ws-ks-flat",
+    "categoryId": "aci-weight-scale",
+    "name": "ACI Kitchen Scale Flat (0-5 KG)",
+    "family": "Kitchen Scale Flat",
+    "code": "J284",
+    "spec": "0-5 KG",
+    "image": "https://acimotors-bd.com/assets/images/weight-1000.jpg",
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/aci-weight-scale",
+    "mrp": 865
+  },
+  {
+    "id": "ws-ks-grove",
+    "categoryId": "aci-weight-scale",
+    "name": "ACI Kitchen Scale Grove (0-5 KG)",
+    "family": "Kitchen Scale Grove",
+    "code": "J285",
+    "spec": "0-5 KG",
+    "image": "https://acimotors-bd.com/assets/images/weight-1000.jpg",
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/aci-weight-scale",
+    "mrp": 920
+  },
+  {
+    "id": "ws-hook-50",
+    "categoryId": "aci-weight-scale",
+    "name": "ACI Weight Scale Hook (0-50 KG)",
+    "family": "Weight Scale (Hook)",
+    "code": "J276",
+    "spec": "0-50 KG",
+    "image": "https://acimotors-bd.com/assets/images/weight-1000.jpg",
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/aci-weight-scale",
+    "mrp": 455
+  },
+  {
+    "id": "ws-hook-300",
+    "categoryId": "aci-weight-scale",
+    "name": "ACI Weight Scale Hook (0-300 KG)",
+    "family": "Weight Scale (Hook)",
+    "code": "J296",
+    "spec": "0-300 KG",
+    "image": "https://acimotors-bd.com/assets/images/weight-1000.jpg",
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/aci-weight-scale",
+    "mrp": 4485
+  },
+  {
+    "id": "ws-ss-prem-40",
+    "categoryId": "aci-weight-scale",
+    "name": "ACI Weight Scale SS Premium (40 KG)",
+    "family": "Bench Scale (SS)",
+    "code": "J290",
+    "spec": "40 KG Premium",
+    "image": "https://acimotors-bd.com/assets/images/product/weight/new-images/40kg.jpg",
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/aci-weight-scale",
+    "mrp": 4120
+  },
+  {
+    "id": "ht-hs-wood-18",
+    "categoryId": "hand-tools",
+    "name": "ACI Smart Hand Saw (Wood)",
+    "family": "Hand Saw (Wood)",
+    "code": "J274",
+    "spec": "18 Inch",
+    "image": "https://acimotors-bd.com/assets/images/product/hand-tools/1(2).png",
+    "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/hand-tools",
+    "mrp": 468
   }
 ];
 

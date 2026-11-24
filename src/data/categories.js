@@ -14,6 +14,14 @@ export const categories = [
     description: "High-performance power tools engineered for efficiency and durability."
   },
   {
+    id: "welding-machine",
+    name: "Welding Machine",
+    slug: "welding-machine",
+    originalUrl: "https://acimotors-bd.com/products/other-machinery/aci-smart-tools",
+    coverImage: "/images/welding-mma-200.jpg",
+    description: "Heavy-duty IGBT inverter arc and TIG welding machines with high thermal efficiency."
+  },
+  {
     id: "hand-tools",
     name: "Hand Tools",
     slug: "hand-tools",
