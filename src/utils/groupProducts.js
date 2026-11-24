@@ -100,6 +100,14 @@ export function groupProducts(rawProducts, categoryId = null) {
 
       if (item.categoryId === 'bearing') {
         displayName = `ACI Bearing (${item.model || 'Series'})`;
+      } else if (item.family === 'Screwdriver') {
+        displayName = 'ACI Screwdriver Series';
+      } else if (item.family === 'Wrench') {
+        displayName = 'ACI Heavy Duty Wrench Series';
+      } else if (item.family === 'Pliers') {
+        displayName = 'ACI Precision Pliers Series';
+      } else if (item.family === 'Hand Saw') {
+        displayName = 'ACI Hand Saw';
       } else if (item.family === 'Adjustable Wrench (Non Grip)') {
         displayName = 'ACI Adjustable Wrench (Non Grip)';
       } else if (item.family === 'Adjustable Wrench (Grip)') {
