@@ -2081,7 +2081,7 @@ export const products = [
     "model": "Ball",
     "spec": "6209-Ball",
     "code": "J230",
-    "image": "/images/bearing-ball.jpg",
+    "image": "/images/bearing-ball.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 277
   },
@@ -2093,7 +2093,7 @@ export const products = [
     "model": "Ball",
     "spec": "6309-Ball",
     "code": "J231",
-    "image": "/images/bearing-ball.jpg",
+    "image": "/images/bearing-ball.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 505
   },
@@ -2105,7 +2105,7 @@ export const products = [
     "model": "Ball",
     "spec": "6204-Ball",
     "code": "J172",
-    "image": "/images/bearing-ball.jpg",
+    "image": "/images/bearing-ball.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 82
   },
@@ -2117,7 +2117,7 @@ export const products = [
     "model": "Ball",
     "spec": "6205-Ball",
     "code": "J173",
-    "image": "/images/bearing-ball.jpg",
+    "image": "/images/bearing-ball.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 91
   },
@@ -2129,7 +2129,7 @@ export const products = [
     "model": "Ball",
     "spec": "6206-Ball",
     "code": "J174",
-    "image": "/images/bearing-ball.jpg",
+    "image": "/images/bearing-ball.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 127
   },
@@ -2141,7 +2141,7 @@ export const products = [
     "model": "Ball",
     "spec": "6207-Ball",
     "code": "J175",
-    "image": "/images/bearing-ball.jpg",
+    "image": "/images/bearing-ball.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 175
   },
@@ -2153,7 +2153,7 @@ export const products = [
     "model": "Ball",
     "spec": "6208-Ball",
     "code": "J176",
-    "image": "/images/bearing-ball.jpg",
+    "image": "/images/bearing-ball.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 217
   },
@@ -2165,7 +2165,7 @@ export const products = [
     "model": "Ball",
     "spec": "6304-Ball",
     "code": "J177",
-    "image": "/images/bearing-ball.jpg",
+    "image": "/images/bearing-ball.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 108
   },
@@ -2177,7 +2177,7 @@ export const products = [
     "model": "Ball",
     "spec": "6305-Ball",
     "code": "J178",
-    "image": "/images/bearing-ball.jpg",
+    "image": "/images/bearing-ball.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 138
   },
@@ -2189,7 +2189,7 @@ export const products = [
     "model": "Ball",
     "spec": "6306-Ball",
     "code": "J179",
-    "image": "/images/bearing-ball.jpg",
+    "image": "/images/bearing-ball.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 210
   },
@@ -2201,7 +2201,7 @@ export const products = [
     "model": "Ball",
     "spec": "6307-Ball",
     "code": "J180",
-    "image": "/images/bearing-ball.jpg",
+    "image": "/images/bearing-ball.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 276
   },
@@ -2213,7 +2213,7 @@ export const products = [
     "model": "Ball",
     "spec": "6308-Ball",
     "code": "J181",
-    "image": "/images/bearing-ball.jpg",
+    "image": "/images/bearing-ball.png",
     "originalUrl": "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
     "mrp": 25
   },
