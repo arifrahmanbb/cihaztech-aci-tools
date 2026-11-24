@@ -5,25 +5,31 @@ import ProductCard from './ProductCard.jsx';
  *
  * Mobile-first responsive e-commerce grid inside a 1320px container:
  * - Mobile (< 640px): 2 cards per row (clean, user-friendly density)
- * - Tablet (640px - 1023px): 3 cards per row (adapting to available screen space)
- * - Desktop (1024px+): 4 cards per row (rich e-commerce browsing layout)
- * - Auto-adapting spacing: gap-3.5 on mobile, gap-5 on tablet, gap-6 on desktop
+ * - Tablet (640px - 1023px): 3 cards per row
+ * - Desktop (1024px+):
+ *   - For exactly 3 cards (e.g. Bearing: 2RS, Ball, Roller): 3 columns centered in max-w-5xl
+ *   - For 4+ cards: 4 columns
+ * - Auto-adapting spacing: gap-4 on mobile, gap-5 on tablet, gap-6 on desktop
  */
 export default function ProductGrid({ products = [] }) {
   if (!products.length) {
     return (
       <div className="w-full text-center py-8">
-        <p className="text-xs sm:text-sm text-gray-400 italic">
+        <p className="text-xs sm:text-sm text-slate-400 italic">
           No products available in this category.
         </p>
       </div>
     );
   }
 
+  const isThreeItems = products.length === 3;
+
   return (
-    <div className="w-full">
+    <div className={`w-full ${isThreeItems ? 'max-w-5xl mx-auto' : ''}`}>
       <ul
-        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-5 lg:gap-6 w-full items-stretch"
+        className={`grid grid-cols-2 md:grid-cols-3 ${
+          isThreeItems ? 'lg:grid-cols-3' : 'lg:grid-cols-4'
+        } gap-4 sm:gap-5 lg:gap-6 w-full items-stretch`}
         role="list"
         aria-label="Product list"
       >

@@ -1,7 +1,7 @@
 /**
  * ACI Motors – Category Metadata
  * Reference: https://acimotors-bd.com/products/other-machinery/aci-smart-tools
- * 8 Active Categories in authentic order (Bearing excluded as per requirement).
+ * All 9 active categories in their authentic order.
  */
 
 export const categories = [
@@ -68,6 +68,14 @@ export const categories = [
     originalUrl: "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/cutting-disc",
     coverImage: "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/disc-1.jpg",
     description: "Premium abrasive rod cutting and diamond blades for masonry and steel."
+  },
+  {
+    id: "bearing",
+    name: "Bearing",
+    slug: "bearing",
+    originalUrl: "https://acimotors-bd.com/products/other-machinery/aci-smart-tools/bearing",
+    coverImage: "https://acimotors-bd.com/assets/images/product/others/viibrator/disc/bearing-covere.jpg",
+    description: "High precision ball and roller bearings for automotive and machinery."
   }
 ];
 

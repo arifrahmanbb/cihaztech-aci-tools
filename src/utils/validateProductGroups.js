@@ -3,10 +3,10 @@
  * 
  * Validates the grouped product dataset against strict criteria:
  * 1. Every grouped card has a valid image URL.
- * 2. Every product / variation has a verified positive MRP price.
+ * 2. Every product / variation has a verified positive price.
  * 3. Variations belong to the correct product family.
  * 4. No duplicate variation exists within the same product group.
- * 5. Bearing category is completely excluded as required.
+ * 5. Bearing category contains exactly 3 distinct cards (2RS, Ball, Roller).
  */
 
 export function validateProductGroups(categoriesWithProducts, allRawProducts = []) {
@@ -27,13 +27,16 @@ export function validateProductGroups(categoriesWithProducts, allRawProducts = [
       errors.push(`Category missing id or name: ${JSON.stringify(category)}`);
     }
 
-    if (category.id === 'bearing') {
-      errors.push(`Bearing category must be skipped entirely as per requirements.`);
-    }
-
     if (!Array.isArray(category.products)) {
       errors.push(`Category "${category.name}" has no products array`);
       return;
+    }
+
+    // Specific check for Bearing category: exactly 3 cards (2RS, Ball, Roller)
+    if (category.id === 'bearing') {
+      if (category.products.length !== 3) {
+        warnings.push(`[Bearing Check] Expected exactly 3 bearing cards (2RS, Ball, Roller), got ${category.products.length}`);
+      }
     }
 
     const seenImageAndFamily = new Set();
@@ -47,9 +50,9 @@ export function validateProductGroups(categoriesWithProducts, allRawProducts = [
         errors.push(`[Image Check] Card "${product.name}" in "${category.name}" has no valid image.`);
       }
 
-      // 2. Price Check (MRP must be valid)
+      // 2. Price Check (Price must be valid)
       if (!product.mrp || product.mrp <= 0) {
-        warnings.push(`[Price Check] Card "${product.name}" in "${category.name}" has missing or 0 MRP price.`);
+        warnings.push(`[Price Check] Card "${product.name}" in "${category.name}" has missing or 0 price.`);
       } else {
         stats.pricedItems += 1;
       }
@@ -61,34 +64,31 @@ export function validateProductGroups(categoriesWithProducts, allRawProducts = [
       }
       seenImageAndFamily.add(familyKey);
 
-      // 4. Duplicate Variation Check within the card
-      const seenVariations = new Set();
-      (product.variations || []).forEach((v) => {
-        const vKey = `${(v.label || '').toLowerCase()}::${(v.code || '').toLowerCase()}`;
-        if (seenVariations.has(vKey)) {
-          warnings.push(`[Duplicate Variation] Duplicate variation "${v.label}" (${v.code}) in card "${product.name}"`);
-        }
-        seenVariations.add(vKey);
-      });
+      // 4. Variations Validation
+      if (Array.isArray(product.variations)) {
+        const seenVarIds = new Set();
+        product.variations.forEach((variation) => {
+          if (!variation.label) {
+            errors.push(`[Variation Label] Variation in "${product.name}" has empty label.`);
+          }
+          if (seenVarIds.has(variation.id)) {
+            warnings.push(`[Duplicate Variation ID] "${variation.id}" in "${product.name}"`);
+          }
+          seenVarIds.add(variation.id);
 
-      // 5. Source item accounting
-      if (Array.isArray(product.rawItems)) {
-        product.rawItems.forEach((raw) => {
-          if (raw.id) accountedRawIds.add(raw.id);
+          if (variation.originalItem?.id) {
+            accountedRawIds.add(variation.originalItem.id);
+          }
         });
       }
     });
   });
 
-  const isValid = errors.length === 0;
-
   return {
-    isValid,
+    isValid: errors.length === 0,
     errors,
     warnings,
     stats,
     summary: `Validated ${stats.totalCategories} active categories, ${stats.totalGroupedCards} grouped product cards, ${stats.totalVariations} total variations. Errors: ${errors.length}, Warnings: ${warnings.length}`
   };
 }
-
-export default validateProductGroups;

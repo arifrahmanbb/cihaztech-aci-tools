@@ -13,6 +13,10 @@
 export function getVariationHeading(variations, family = '') {
   if (!variations || variations.length === 0) return 'Available Options';
 
+  if (family && /bearing/i.test(family)) {
+    return 'Available Specifications';
+  }
+
   let hasSizes = false;
   let hasWeights = false;
   let hasSpecs = false;
@@ -94,7 +98,9 @@ export function groupProducts(rawProducts, categoryId = null) {
       let displayName = item.name;
       let model = item.model || '';
 
-      if (item.family === 'Adjustable Wrench (Non Grip)') {
+      if (item.categoryId === 'bearing') {
+        displayName = `ACI Bearing (${item.model || 'Series'})`;
+      } else if (item.family === 'Adjustable Wrench (Non Grip)') {
         displayName = 'ACI Adjustable Wrench (Non Grip)';
       } else if (item.family === 'Adjustable Wrench (Grip)') {
         displayName = 'ACI Adjustable Wrench (Grip)';
@@ -167,7 +173,7 @@ export function groupProducts(rawProducts, categoryId = null) {
     }
   });
 
-  // Post-process groups: compute MRP pricing display and flags
+  // Post-process groups: compute pricing display and flags
   return Array.from(groupsMap.values()).map((group) => {
     const variationHeading = getVariationHeading(group.variations, group.family);
     const hasMeaningfulVariations =
