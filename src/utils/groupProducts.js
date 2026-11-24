@@ -94,12 +94,26 @@ export function groupProducts(rawProducts, categoryId = null) {
       let displayName = item.name;
       let model = item.model || '';
 
-      if (item.family === 'Pipe Wrench') {
+      if (item.family === 'Adjustable Wrench (Non Grip)') {
+        displayName = 'ACI Adjustable Wrench (Non Grip)';
+      } else if (item.family === 'Adjustable Wrench (Grip)') {
+        displayName = 'ACI Adjustable Wrench (Grip)';
+      } else if (item.family === 'Pipe Wrench') {
         displayName = 'ACI Heavy Duty Pipe Wrench';
-      } else if (item.family === 'Screwdriver') {
-        displayName = 'ACI Screwdriver Series';
-      } else if (item.family === 'Pliers') {
-        displayName = 'ACI High Leverage Pliers';
+      } else if (item.family === 'Screwdriver (NH-Flat)') {
+        displayName = 'ACI Screwdriver (NH-Flat)';
+      } else if (item.family === 'Screwdriver (NH-Star)') {
+        displayName = 'ACI Screwdriver (NH-Star)';
+      } else if (item.family === 'Screwdriver (H-Flat)') {
+        displayName = 'ACI Screwdriver (H-Flat)';
+      } else if (item.family === 'Screwdriver (H-Star)') {
+        displayName = 'ACI Screwdriver (H-Star)';
+      } else if (item.family === 'Combination Pliers') {
+        displayName = 'ACI Combination Pliers';
+      } else if (item.family === 'Cutting Pliers') {
+        displayName = 'ACI Cutting Pliers';
+      } else if (item.family === 'Nose Pliers') {
+        displayName = 'ACI Nose Pliers';
       } else if (item.family === 'Ball Pein Hammer') {
         displayName = 'ACI Drop Forged Ball Pein Hammer';
       } else if (item.family === 'Angle Grinder') {
@@ -178,30 +192,31 @@ export function groupProducts(rawProducts, categoryId = null) {
 
     return {
       ...group,
-      mrp: minMrp,
-      minMrp,
-      maxMrp,
-      priceDisplay,
       variationHeading,
-      hasVariations: hasMeaningfulVariations,
-      variationCount: group.variations.length
+      hasMultipleVariations: group.variations.length > 1,
+      hasMeaningfulVariations,
+      mrp: minMrp,
+      priceDisplay,
+      totalVariations: group.variations.length
     };
   });
 }
 
 /**
- * Builds the complete list of categories populated with their grouped product cards.
+ * Return all categories with their grouped product cards.
+ * 
+ * @param {Array} categoriesList
+ * @param {Array} rawProducts
+ * @returns {Array} Categories array with products attached
  */
-export function getCategoriesWithGroupedProducts(categoriesList, allRawProducts) {
-  return categoriesList.map((category) => {
-    const grouped = groupProducts(allRawProducts, category.id);
+export function getCategoriesWithGroupedProducts(categoriesList, rawProducts) {
+  return categoriesList.map((cat) => {
+    const grouped = groupProducts(rawProducts, cat.id);
     return {
-      ...category,
+      ...cat,
       products: grouped,
-      totalGroupedCount: grouped.length,
-      totalRawItemsCount: grouped.reduce((acc, p) => acc + (p.rawItems?.length || 1), 0)
+      totalGroupedProducts: grouped.length,
+      totalRawProducts: rawProducts.filter((p) => p.categoryId === cat.id).length
     };
   });
 }
-
-export default groupProducts;
